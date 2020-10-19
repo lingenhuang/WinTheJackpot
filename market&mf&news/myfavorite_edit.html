@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <title>Win The Jackpot </title>
+    <!--改籤頁的標題 -->
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://jean870809.github.io/ruby/index.html">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="">
+    <link rel="canonical" href="">
+    <link href="../font/googlefont.css" rel="stylesheet">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="../dawho1.css">
+    <link rel="stylesheet" href="../dawho2.css">
+    <link rel="stylesheet" href="tabletab.css">
+    <link rel="stylesheet" href="marketstyle.css">
+    <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1'
+        type='text/css' media='all' />
+<!-- 上面的linkcss要連網 -->
+<script src="../qts&game/d3.js"></script>
+<script src="Chart.min.js"></script>
+
+    <style>
+        #drag_pic{
+          width: 60%;
+          height: 400px;
+          padding: 10px;
+          border: 0px solid #aaaaaa;
+        }
+        #div1{
+          width: 500px;
+          height: 400px;
+          border: 0px solid #aaaaaa;
+        }
+        
+        .f_HanSans_light{
+            background-repeat: no-repeat;
+            background-position: 50% 100%;
+            background-size: 600px 600px;
+        }
+        /*.img_select{
+            position: absolute;
+            top:600px;
+            left:700px;
+        }
+        #heart{
+            z-index: -1;
+        }*/
+        </style>
+</head>
+
+<body class="f_HanSans_light" background="img/heart.webp">
+    <div id="menu">
+        <div class="container">
+            <header class="head">
+                <input id="control_menu" type="checkbox" name="checkbox">
+                <div class="menu font_Gen_bold">
+                    <a class="logo_a" href="../index.html"><img class="logo" src="image1.png"></a>
+                    <a class="btn_label">
+                        <label class="label_block" for="control_menu"></label></a>
+                        <nav class="nav" style="font-family: 'Ranchers';"><a class="menu_item" href="../index.html">Home</a><a
+                            class="menu_item" href="market.html">Market</a>
+                            <a class="menu_item" href="myfavorite.html">MyFavorite</a>
+                        <a class="menu_item" href="../qts&game/qts.html">Recommendation</a>
+                        <a></a>
+                        <a class="menu_item" href="news.html">News</a>
+                        <a class="menu_item" href="../gamecard/ruby_card.html">Game</a>
+                        <a class="btn_gold shadow menu_btn_gold" href="login.html" id="name">羅述慈</a>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div id="main">
+        <section id="banner" class="major">
+            <div class="inner">
+                <header class="major">
+                    <h1 style="text-align:center; color: black;">FAVORITE</h1>
+                </header>
+            </div>
+        </section>
+        
+        <center><div id = "drag_pic" ondrop="droponS(event)" ondragover="allowDrop(event)">
+            <img src="img/AAPL.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" style="z-index: 1000;" id=0>
+            <img src="img/AXP.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=1 >
+            <img src="img/BA.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=2>
+            <img src="img/CAT.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=3>
+            <img src="img/CSCO.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=4>
+            <img src="img/CVX.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=5>
+            <img src="img/DD.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=6>
+            <img src="img/DIS.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=7>
+            <img src="img/GS.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=8>
+            <img src="img/HD.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=9>
+            <img src="img/IBM.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=10>
+            <img src="img/INTC.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=11>
+            <img src="img/JNJ.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=12>
+            <img src="img/JPM.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=13>
+            <img src="img/KO.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=14>
+            <img src="img/MCD.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=15>
+            <img src="img/MMM.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=16>
+            <img src="img/MRK.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=17>
+            <img src="img/MSFT.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=18>
+            <img src="img/NKE.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=19>
+            <img src="img/PFE.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=20>
+            <img src="img/PG.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=21>
+            <img src="img/TRV.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=22>
+            <img src="img/UNH.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=23>
+            <img src="img/UTX.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=24>
+            <img src="img/V.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=25>
+            <img src="img/VZ.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=26>
+            <img src="img/WBA.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=27>
+            <img src="img/WMT.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=28>
+            <img src="img/XOM.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=29>
+        </div></center>
+        <center><div id="div1" ondrop="droponD(event)" ondragover="allowDrop(event)"  ></div></center>
+        <center><input type="button" value="SUBMIT" onclick="dochart()"></center>
+        
+    </div>
+    <!-- script -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src = "assets/js/dawho4.js"></script>
+    <script src = "assets/js/dawho6.js"></script>
+    <script src = "assets/js/dawho7.js"></script>
+    <script src = "assets/js/dawho8.js"></script>
+    <script src = "assets/js/dawho9.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="assets/js/init_edit.js"></script>
+</body>
+
+</html>
+
+
+
+<script>

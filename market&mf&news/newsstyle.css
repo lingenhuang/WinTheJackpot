@@ -1,0 +1,308 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Ranchers';
+    letter-spacing: 0px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.65;
+    margin: 0 0 1em 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    border-bottom: 0;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.35em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5 {
+    font-size: 0.9em;
+}
+
+h6 {
+    font-size: 0.7em;
+}
+
+/* Type */
+
+body, input, select, textarea {
+    color: #ffffff;
+    /*圖片字顏色*/
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 17pt;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    line-height: 1.65;
+}
+
+@media screen and (max-width: 1680px) {
+    body, input, select, textarea {
+        font-size: 14pt;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body, input, select, textarea {
+        font-size: 11pt;
+    }
+}
+header.major> :first-child:after {
+	content: '';
+	background-color: #ffffff;
+	display: block;
+	height: 2px;
+	margin: 0.325em 0 0.5em 0;
+	width: 100%;
+}
+
+/* Tiles */
+
+.tiles {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	border-top: 0 !important;
+}
+
+.tiles+* {
+	border-top: 0 !important;
+}
+
+.tiles article {
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease, -moz-filter 1s ease, -webkit-filter 1s ease;
+	-webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease, -webkit-filter 1s ease, -webkit-filter 1s ease;
+	-ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, -ms-filter 1s ease, -webkit-filter 1s ease;
+	transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
+	padding: 2em 2em 1em 2em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: default;
+	height: 40vh;
+	max-height: 40em;
+	min-height: 23em;
+	overflow: hidden;
+	position: relative;
+	width: 50%;
+	/*遮罩大小*/
+}
+
+.tiles article .image {
+	display: none;
+}
+
+.tiles article header {
+	position: relative;
+	z-index: 3;
+}
+
+.tiles article h3 {
+	font-size: 2em;
+}
+
+.tiles article h3 a:hover {
+	color: inherit !important;
+}
+
+.tiles article .link.primary {
+	border: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 4;
+}
+
+.tiles article:before {
+	-moz-transition: opacity 0.5s ease;
+	-webkit-transition: opacity 0.5s ease;
+	-ms-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	opacity: 0.5;
+	/*遮罩透明度*/
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+
+.tiles article:after {
+	background-color: rgba(36, 41, 67, 0.25);
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.tiles article:hover:before {
+	opacity: 0;
+}
+
+.tiles article.is-transitioning {
+	-moz-transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+	-moz-filter: blur(0.5em);
+	-webkit-filter: blur(0.5em);
+	-ms-filter: blur(0.5em);
+	filter: blur(0.5em);
+	opacity: 0;
+}
+
+.tiles article:nth-child(3n){
+	width: 100%;
+	/*遮罩大小*/
+}
+
+.tiles article:nth-child(6n - 5):before {
+	/*改遮罩顏色*/
+	background-color: #6fa1cf;
+}
+
+.tiles article:nth-child(6n - 4):before {
+	background-color: #b47cdd;
+}
+
+.tiles article:nth-child(6n - 3):before {
+	background-color: #e4a198;
+}
+
+.tiles article:nth-child(6n - 2):before {
+	background-color: #e6b98d;
+}
+
+.tiles article:nth-child(6n - 1):before {
+	background-color: #8aa4e0;
+}
+
+.tiles article:nth-child(6n):before {
+	background-color: #a1f3c7;
+}
+
+@media screen and (max-width: 1280px) {
+	.tiles article {
+		padding: 4em 3em 2em 3em;
+		height: 30vh;
+		max-height: 30em;
+		min-height: 20em;
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.tiles article {
+		width: 50% !important;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.tiles article {
+		padding: 3em 1.5em 1em 1.5em;
+		height: 16em;
+		max-height: none;
+		min-height: 0;
+	}
+	.tiles article h3 {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.tiles {
+		display: block;
+	}
+	.tiles article {
+		height: 20em;
+		width: 100% !important;
+	}
+}
+
+
+/* Image */
+
+.image {
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+
+
+
+.tiles article header {
+    position: relative;
+    z-index: 3;
+}
+
+.tiles article .link.primary {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: 4;
+}
+
+a {
+    -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    color: inherit;
+    text-decoration: none;
+}

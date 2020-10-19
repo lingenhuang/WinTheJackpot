@@ -1,0 +1,38 @@
+.intro {
+	color: #2f466e;
+	padding: 30px;
+	text-align: center;
+}
+
+.goto {
+	background: #2f466e;
+	border: 2px solid #ffffff;
+	border-radius: 0px;
+	padding: 20px 45px;
+	color: #fbfbfb;
+	display: inline-block;
+	font-family: 'Ranchers', cursive;
+	text-align: center;
+	text-shadow: 1px 1px #444444;
+}
+
+.css-table {
+	display: table;
+	margin: 50px;
+}
+
+.css-table .thead {
+	display: table-header-group;
+}
+
+.css-table .tbody {
+	display: table-row-group;
+}
+
+.css-table .tr {
+	display: table-row;
+}
+
+.css-table .th, .css-table .td {
+	display: table-cell;
+}

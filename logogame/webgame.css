@@ -1,0 +1,271 @@
+/* ----------------------------
+STYLES/LAYOUT
+---------------------------- */
+
+html {
+  font-size: 60%;
+}
+
+html,
+body {
+ 
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.btn{
+  font-family: 'Ranchers', cursive;
+    letter-spacing: 5px;
+}
+body {
+    color: #fff;
+  font-family: 'Ranchers', cursive;
+    letter-spacing: 5px;
+  background: #2f466e;
+  font-size: 1rem;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 480px;
+}
+.topp{
+position: fixed;
+display: inline;
+}
+ul li{
+list-style-type:none;
+list-style-image: url(aa/%E6%87%89%E7%B6%93%E7%BE%8A.gif);
+}
+.goto{
+width: 50px;
+    
+background:    #2f466e;
+
+border:        2px solid #ffffff;
+padding:       20px 50px 20px 40px;
+color:         #fbfbfb;
+display:       inline-block;
+  font-family: 'Ranchers', cursive;
+text-align:    center;
+text-shadow:   1px 1px #444444;
+    font-size: 5px;
+}
+
+h1, h2, h3, h4, h5, h6, div, p, i {
+  margin: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+/* Container divs*/
+.init-page,
+.questions-page,
+.results-page {
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Button */
+.btn {
+  margin: 2rem auto 0;
+  display: block;
+  width: 100%;
+  font-size: 2.5rem;
+  padding: 1.5rem 0;
+  background: #01ABAA;
+  border: none;
+}
+
+.btn {
+  background: orange;
+}
+
+/* TITLE PAGE */
+
+.init-page__title {
+  margin: 0;
+  font-family: 'Ranchers',cursive;
+    letter-spacing: 5px;
+  font-size: 5rem;
+}
+
+.init-page__icon {
+  font-size: 20rem;
+  margin: 0;
+}
+.score {
+   border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    width: 250px;
+    height: 15%;
+    background: orange;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    
+}
+#scorenum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  
+    
+}
+
+
+/* QUESTIONS PAGE*/
+
+span .questions-page__answer-A{
+color: aliceblue}
+li.questions-page__answer-line{
+    display: block;
+    align-content: center;
+
+ margin-top: 30px;
+    vertical-align: top;
+    margin-left: 200px
+    
+}
+li .alphabet {
+    border-radius: 5px;
+    border: solid 1px #000;
+    padding: .4rem .5rem .4rem;
+    width: 2.3rem;
+    margin: 0 1.3rem 0 .7rem;
+
+    justify-content: center;
+    color: #fff;
+   
+}
+
+div .Choice{
+    background: #000;
+    color:#fff;
+}
+
+li:hover .alphabet {
+    background: #000;
+    color: #fff;
+}
+
+
+.questions-page__answer-list {
+  padding: 0;
+  list-style-type: none;
+  font-size: 2rem;
+  line-height: 6rem;
+ align-content: center;
+    text-align:justify;
+}
+
+
+.questions-page__answer-line {
+  margin: 0 auto;
+  width: 75%;
+  cursor: pointer;
+}
+
+.questions-page__selection-div {
+  float: left;
+  padding-left: 1rem;
+  font-size: 2.75rem;
+}
+
+.questions-page__feedback-div {
+  float: right;
+  padding-right: 1rem;
+  font-size: 2.5rem;
+}
+.questions-page--choose{
+    background: orange;
+}
+.questions-page--correct {
+  background: #76B574;
+
+}
+
+.questions-page--incorrect {
+  background: #FEA680;
+}
+
+.btn-holder {
+  height: 6rem;
+}
+
+/* RESULTS PAGE */
+
+.results-page__info {
+  font-size: 3rem;
+}
+
+.results-page__score {
+  font-size: 10rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.results-page__spanish-btn {
+  margin-top: 3rem;
+}
+
+.results-page__spanish-btn-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+
+/* ----------------------------
+MEDIA QUERIES
+---------------------------- */
+
+@media screen and (min-width: 480px) {
+
+  html {
+    font-size: 85%;
+  }
+
+  body {
+    min-height: 700px;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .questions-page__question {
+    height: 2rem;
+     
+  }
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    min-height: 800px;
+  }
+
+}

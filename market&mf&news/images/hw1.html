@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>hello world v</title>
+    <script>
+        function doOutput()
+        {
+                var obj=document.getElementsByName("checkbox");
+                var len = obj.length,num = 0;
+                var tmp = [];
+                var dps1,dps2,dps3,dps4,dps5;
+                for(i=0;i<len;i++)
+                {
+                    if(obj[i].checked==true){
+                        tmp[i] = true;
+                        num++;
+                        }
+                    else
+                        tmp[i] = false;
+                }
+                document.body.innerHTML = '<div id="one"></div>' ;
+                var d1 = document.getElementById("one");
+                d1.insertAdjacentHTML('beforeend',"<div id='chartContainer' style='height: 300px; width: 100%;'></div>");       
+                window.onclick = function () {
+                    var dps = [{x:3,y:4},{x:5,y:6},{x:7,y:8}];
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                        animationEnabled: true,
+                        theme: "light2",
+                        title:{
+                            text: "Simple Line Chart"
+                        },
+                        axisY:{
+                            includeZero: false
+                        },
+                        data: [
+                        {name:"APL",showInLegend: true,type: "line",indexLabelFontSize: 16,dataPoints: dps1},
+                        {name:"AXP",showInLegend: true,type:"line",indexLabelFontSize:16,dataPoints:dps2},
+                        {name:"BA",showInLegend: true,type: "line",indexLabelFontSize: 16,dataPoints:dps3},
+                        {name:"CAT",showInLegend: true,type: "line",indexLabelFontSize: 16,dataPoints: dps4},
+                        {name:"CSCO",showInLegend: true,type: "line",indexLabelFontSize: 16,dataPoints: dps5},]});
+                        chart.render();
+                    }
+                    d1.insertAdjacentHTML ('beforeend'," <div id='chartContainer' style='height: 300px; width: 100%;'></div>");    
+                
+                    if(tmp[0] == true){
+                        dps1=[{ x:1,y: 173.3 },{ x:2,y: 179.64},{ x:3,y: 182.54 },{x:4, y: 185.22 },{x:5, y: 190.15 },{ x:6,y: 192.58 },{x:7, y: 194.81 },{ x:8,y: 194.19 },{ x:9,y: 194.15 },{x:10, y: 192.74 },{ x:11,y: 193.89 },{x: 12,y: 198.45 },{x:13,y:197.87},{x:14,y:199.46},{x:15,y:198.78},{x:16,y:198.58},{x:17,y:195.57},{x:18,y:199.8},{x:19,y:199.74},{x:20,y:197.92}];
+                        d1.insertAdjacentHTML('beforeend',"<center><img src = '2.png' width='250'/></center>");
+                        d1.insertAdjacentHTML ('beforeend'," <div id='chartContainer' style='height: 300px; width: 100%;'></div>");    
+                        }
+                    if(tmp[1] == true){
+                        dps2=[{ x:1,y: 114.62 },{ x:2,y: 116.85},{ x:3,y: 118.12 },{x:4, y: 119.43 },{x:5, y: 121.11 },{ x:6,y: 122.66 },{x:7, y: 123.23 },{ x:8,y: 122.03 },{ x:9,y: 121.86 },{x:10, y: 122 },{ x:11,y: 121.45 },{x: 12,y: 123.43 },{x:13,y:124.68},{x:14,y:124.92},{x:15,y:124.73},{x:16,y:124.14},{x:17,y:123.16},{x:18,y:123.59},{x:19,y:123.94},{x:20,y:123.44}];
+                        d1.insertAdjacentHTML ('beforeend',"<center><img src='AXP.png' width='250'/></center>");
+                        d1.insertAdjacentHTML ('beforeend'," <div id='chartContainer' style='height: 300px; width: 100%;'></div>");   
+                        }
+                    if(tmp[2] == true){
+                        dps3=[{ x:1,y: 338.89 },{ x:2,y: 344.62},{ x:3,y: 348.75 },{x:4, y: 350.64 },{x:5, y: 353.7 },{ x:6,y: 353.8 },{x:7, y: 349.33 },{ x:8,y: 347.03 },{ x:9,y: 348.86 },{ x:10,y: 347.16 },{x: 11,y: 354.9 },{x:12,y:373.96},{x:13,y:368.56},{x:14,y:374.88},{x:15,y:371.84},{x:16,y:373.99},{x:17,y:369.32},{x:18,y:374.94},{x:19,y:364.02},{x:20,y:364.01}];
+                        d1.insertAdjacentHTML ('beforeend',"<center><img src='BA.png'width='250'/></center>");
+                    }
+                    if(tmp[3] == true){
+                        dps4=[{ x:1,y: 120.65 },{ x:2,y: 122.08},{ x:3,y: 123.12 },{x:4, y: 123.39 },{x:5, y: 124.46 },{ x:6,y:125.74 },{x:7, y:127.28 },{ x:8,y: 127.1 },{ x:9,y: 127.17 },{x:10, y: 127.23},{ x:11,y: 127.32 },{x: 12,y: 130.33 },{x:13,y:130.61},{x:14,y:133.63},{x:15,y:133.89},{x:16,y:134.37},{x:17,y:133.71},{x:18,y:135.15},{x:19,y:135.5},{x:20,y:136.29}];
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="CAT.png" width="250"/></center>');}
+                    if(tmp[4] == true)
+                        dps5=[{ x:1,y: 51.78 },{ x:2,y: 53.23},{ x:3,y: 54.75 },{x:4, y: 55.1 },{x:5, y: 55.93 },{ x:6,y: 56.42 },{x:7, y: 57.11 },{ x:8,y: 55.86 },{ x:9,y: 56.17 },{x:10, y: 54.75 },{ x:11,y: 55.4 },{x: 12,y: 56.05 },{x:13,y:56.13},{x:14,y:57.41},{x:15,y:57.03},{x:16,y:57.18},{x:17,y:56.08},{x:18,y:56.6},{x:19,y:55.73},{x:20,y:54.73}];
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="CSCO.png" width="250"/></center>');
+                    if(tmp[5] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="CVX.png" width="250"/></center>');
+                    if(tmp[6] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="DD.png" width="250"/></center>');
+                    if(tmp[7] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="DIS.png" width="250"/></center>');
+                    if(tmp[8] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="GE.png" width="250"/></center>');
+                    if(tmp[9] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="HD.png" width="250"/></center>');
+                    if(tmp[10] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="IBM.png" width="250"/></center>');
+                    if(tmp[11] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="INTC.png" width="250"/></center>');
+                    if(tmp[12] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="JNJ.png" width="250"/></center>');
+                    if(tmp[13] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="JPM.png" width="250"/></center>');
+                    if(tmp[14] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="KO.png" width="250"/></center>');
+                    if(tmp[15] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="MCD.png" width="250"/></center>');
+                    if(tmp[16] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="MMM.png" width="250"/></center>');
+                    if(tmp[17] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="MRK.png" width="250"/></center>');
+                    if(tmp[18] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="MSFT.png" width="250"/></center>');
+                    if(tmp[19] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="NKE.png" width="250"/></center>');
+                    if(tmp[20] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="PFE.png" width="250"/></center>');
+                    if(tmp[21] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="PG.png" width="250"/></center>');
+                    if(tmp[22] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="TRV.png" width="250"/></center>');
+                    if(tmp[23] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="UNH.png" width="250"/></center>');
+                    if(tmp[24] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="UTX.png" width="250"/></center>');
+                    if(tmp[25] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="V.png" width="250"/></center>');
+                    if(tmp[26] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="VZ.png" width="250"/></center>');
+                    if(tmp[27] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="WMT.png" width="250"/></center>');
+                    if(tmp[28] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="XOM.png" width="250"/></center>');
+                    if(tmp[29] == true)
+                        d1.insertAdjacentHTML ('beforeend','<center><img src="GS.png" width="250"/></center>');
+                    }                
+    </script>
+    <style>
+        ul {list-style-type: none;}
+        li {display: inline-block;}
+        input[type="checkbox"][id^="checkbox"] {display: none;}
+        label {border: 1px solid #fff;padding: 10px;display: block;position: relative;margin: 10px;cursor: pointer;}
+
+        label:before {background-color: rgb(253, 253, 253);color: white;content: " ";display: block;border-radius: 50%;border: 1px solid grey;position: absolute;top: -5px;left: -5px;width: 25px;height: 25px;text-align: center;line-height: 28px;transition-duration: 0.4s;transform: scale(0);}
+
+        label img {height: 100px;width: 100px;transition-duration: 0.2s;transform-origin: 50% 50%;}
+
+        :checked + label {border-color: #ddd;}
+
+        :checked + label:before {content: "✓";background-color:rgb(120, 137, 190);transform: scale(1);}
+
+        :checked + label img {transform: scale(0.9);/* box-shadow: 0 0 5px #333; */z-index: -1;}
+    </style>
+</head>
+<body>
+    <form name="form1" method="post" action=""> 
+        <ul>
+            <li>
+            <input  type="checkbox" name="checkbox" id="checkbox1" value="checkbox" width="500"/>
+            <label for="checkbox1"><img src="2.png" /></label>
+            </li>
+            <li>
+                <input type="checkbox"  name="checkbox" id="checkbox2" value="checkbox"/>
+            <label for="checkbox2"><img src="AXP.png" /></label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkbox" id="checkbox3" value="checkbox"/>
+            <label for="checkbox3"><img src="BA.png" /></label></li>
+            <li>
+            <input type="checkbox" class="checkb"  name="checkbox" id="checkbox4" value="checkbox"/>
+            <label for="checkbox4"><img src="CAT.png" /></label>
+            </li>
+            <li>
+            <input type="checkbox"  name="checkbox" id="checkbox5" value="checkbox"/>
+            <label for="checkbox5"><img src="CSCO.png" /></label>
+            </li>
+        </ul>
+        <ul>
+        <li>
+            <input type="checkbox" class="checkb" name="checkbox" id="checkbox6" value="checkbox"/>
+            <label for="checkbox6"><img src="CVX.png" /></label></li>
+            <li>
+            <input type="checkbox" class="checkb" name="checkbox" id="checkbox7" value="checkbox"/>
+            <label for="checkbox7"><img src="DD.png" /></label></li>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox8" value="checkbox"/>
+            <label for="checkbox8"><img src="DIS.png" /></label></li>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox9" value="checkbox"/>
+            <label for="checkbox9"><img src="GE.png" /></label></li>
+         <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox10" value="checkbox"/>
+            <label for="checkbox10"><img src="HD.png" /></label></li>
+        </ul>
+        <ul>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox11" value="checkbox" width="500"/>
+            <label for="checkbox11"><img src="IBM.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox12" value="checkbox"/></span>
+            <label for="checkbox12"><img src="INTC.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox13" value="checkbox"/></span>
+            <label for="checkbox13"><img src="JNJ.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class="checkb" class ="checkb" name="checkbox" id="checkbox14" value="checkbox"/>
+            <label for="checkbox14"><img src="JPM.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox15" value="checkbox"/>
+            <label for="checkbox15"><img src="KO.png" class="checkb"/></label></li>
+        </ul>
+        <ul>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox16" value="checkbox" width="500"/>
+            <label for="checkbox16"><img src="MCD.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox17" value="checkbox"/></span>
+            <label for="checkbox17"><img src="MMM.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox18" value="checkbox"/></span>
+            <label for="checkbox18"><img src="MRK.png" class="checkb"/></label></li>
+            <li><input type="checkbox"  class ="checkb" name="checkbox" id="checkbox19" value="checkbox"/>
+            <label for="checkbox19"><img src="MSFT.png" /></label></li>
+            <li><input type="checkbox"  name="checkbox" id="checkbox20" value="checkbox"/>
+            <label for="checkbox20"><img src="NKE.png" /></label></li>
+        </ul>
+        <ul>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox21" value="checkbox" width="500"/>
+            <label for="checkbox21"><img src="PFE.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox22" value="checkbox"/></span>
+            <label for="checkbox22"><img src="PG.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox23" value="checkbox"/></span>
+            <label for="checkbox23"><img src="TRV.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class="checkb" class ="checkb" name="checkbox" id="checkbox24" value="checkbox"/>
+            <label for="checkbox24"><img src="UNH.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox25" value="checkbox"/>
+            <label for="checkbox25"><img src="UTX.png" class="checkb"/></label></li>
+        </ul>
+        <ul>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox26" value="checkbox" width="500"/>
+            <label for="checkbox26"><img src="V.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox27" value="checkbox"/></span>
+            <label for="checkbox27"><img src="VZ.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class ="checkb" name="checkbox" id="checkbox28" value="checkbox"/></span>
+            <label for="checkbox28"><img src="WMT.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class="checkb" class ="checkb" name="checkbox" id="checkbox29" value="checkbox"/>
+            <label for="checkbox29"><img src="XOM.png" class="checkb"/></label></li>
+            <li><input type="checkbox" class="checkb" name="checkbox" id="checkbox30" value="checkbox"/>
+            <label for="checkbox30"><img src="GS.png" class="checkb"/></label></li>
+        </ul>
+        <center><input type="button" name="submit" id="submit" onClick="doOutput();" style="height:50px;width: 200px; color: red;font-size:1cm;" value="SUBMIT">
+        <input type="reset" name="reset" id="reset"  style="height:50px;width: 200px; font-size:1cm;" value="RESET"></center>
+        </form>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <title>Win The Jackpot </title>
+    <!--改籤頁的標題 -->
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://jean870809.github.io/ruby/index.html">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="">
+    <link rel="canonical" href="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="dawho1.css">
+    <link rel="stylesheet" href="../dawho2.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="../font/googlefont.css" rel="stylesheet">
+    <style type=text/css>
+        #loading {
+				border-top: 16px solid blue;
+				border-right: 16px solid green;
+				border-bottom: 16px solid red;
+				border-left: 16px solid pink;
+				border-radius: 50%;
+				left: 46vw;
+				top: 46vh;
+				position: fixed;
+				width: 120px;
+				height: 120px;
+				animation: spin 2s linear infinite;
+				display: none;
+				}
+
+				@keyframes spin {
+				0% { transform: rotate(0deg); }
+				100% { transform: rotate(360deg); }
+				}
+    </style>
+    <script src="d3.js"></script>
+    <script src="Chart.js"></script>
+    <script src="assets/js/init_qts.js"></script>
+    <script src="assets/js/bubble.js"></script>
+    <script src="assets/js/option.js"></script>
+    <script src="assets/js/QTS.js"></script>
+
+</head>
+
+<body class="f_HanSans_light">
+    <div id="menu">
+        <div class="container">
+            <header class="head">
+                <input id="control_menu" type="checkbox" name="checkbox">
+                <div class="menu font_Gen_bold">
+                    <a class="logo_a" href="../index.html"><img class="logo" src="image1.png"></a>
+                    <a class="btn_label">
+                        <label class="label_block" for="control_menu"></label></a>
+                        <nav class="nav" style="font-family: 'Ranchers';">
+                            <a class="menu_item" href="../index.html">Home</a>
+                            <a class="menu_item" href="../market&mf&news/market.html">Market</a>
+                            <a class="menu_item" href="../market&mf&news/myfavorite.html">MyFavorite</a>
+                            <a class="menu_item" href="./qts.html">Recommendation</a>
+                            <a></a>
+                            <a class="menu_item" href="../market&mf&news/news.html">News</a>
+                            <a class="menu_item" href="../gamecard/ruby_card.html">Game</a>
+                            <a class="btn_gold shadow menu_btn_gold" href="../login.html" id="name">Login</a>
+                        </nav>
+                    </div>
+            </header>
+        </div>
+    </div>
+
+    <div id="main">
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+        <section id="innner" class="style2">
+            <div id="root">
+                <svg width="100%" height="700px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg>
+                <div id='loading'>
+                    
+                </div>
+                <audio id="bubble_click">
+                    <source = src="mp3/bubble_click.mp3" type="audio/mp3">
+                </audio>
+                <audio id="bubble_reset">
+                    <source = src="mp3/bubble_reset.mp3" type="audio/mp3">
+                </audio>
+                <audio id="bubble_send">
+                    <source = src="mp3/bubble_send.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </section>
+
+
+
+        <!-- One -->
+        <section id="one" style="background-color: #2f466e; ">
+            <div class="inner">
+                <section>
+                    <form>
+                        <div class="fields">
+                            <div class="field third">
+                                <input type="button" class="button" value="重設" id="resetButton">
+                            </div>
+                            <div class="field third">
+                                <input type="button" value="全選" id="allButton">
+                            </div>
+                            <div class="field third">
+                                <input type="button" value="送出" id="sendButton">
+                            </div>
+                        </div>
+                        <div class="fields">
+                            <div class="field quarter">
+                                <label for="name">旋轉角度</label>
+                                <input type="text" value="0.0004" id="delta">
+                            </div>
+                            <div class="field quarter">
+                                <label for="name">執行次數</label>
+                                <input type="text" value="10000" id="runtimes">
+                            </div>
+                            <div class="field quarter">
+                                <label for="name">粒子數</label>
+                                <input type="text" value="10" id="stock_number">
+                            </div>
+                            <div class="field quarter">
+                                <label for="name">實驗次數</label>
+                                <input type="text" value="1" id="exp_number">
+                            </div>
+                        </div>
+                        <div class="fields" >
+                            <div class="field quarter">
+								<label>演算法</label>
+                                <select name="qts" id="qts_list">
+                                    <option value="QTS">QTS</option>
+                                    <option value="GQTS">GQTS</option>
+                                    <option value="GNQTS" selected>GNQTS</option>
+                                </select>
+                            </div>
+                            <div class="field quarter">
+
+                                <label>開始月份</label>
+                                <input type="month" min="2009-12" max="2019-11" value="2017-02" id="start_month" />
+                            </div>
+                            <div class="field quarter">
+                                <label>結束月份</label>
+                                <input type="month" min="2010-01" max="2019-12" value="2017-02" id="end_month" />
+							</div>
+							<div class="field quarter">
+								<label>模式</label>
+                                <select id="mode">
+									<option value="general">GENERAL</option>
+									<option value="game" selected>COMPARE</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+
+ 
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript"
+        src="jquery.cookie.min.js"></script>
+    <script>
+        var name = $.cookie('googlename')
+        console.log(name);
+        if (name != 'undefined') {
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('name').setAttribute("href", "javascript: void(0)");
+        }
+    </script>
+    <script src="../dawho4.js"></script>
+    <script src="../dawho6.js"></script>
+    <!-- <script src="../dawho7.js"></script> -->
+    <script src="../dawho8.js"></script>
+    <!-- <script src="../dawho9.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>APPLE Concept Stock</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="normalize.min.css">
+<!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Flamenco|Asap:400,700'rel='stylesheet'type='text/css'> -->
+ <script type="text/javascript" src="jquery-1.3.1.min.js"></script>    
+ <script type="text/javascript" src="jquery-1.3.1.js"></script>                                                
+
+<link rel="stylesheet" href="concept.css">
+    <link href="../font/googlefont.css" rel="stylesheet">
+
+                                                                                                                           
+</head>
+<body>
+      <div class="topp"> 
+    <ul>
+    <li><a href="./webgame.html" class="goto">DJI30 Quiz</a></li>
+    <li><a href="../gamecard/rank.html" class="goto" >RANK</a></li>
+    <li><a href="../qts&game/game.html" class="goto" >COMPARE GAME</a></li>
+    </ul>       
+           </div>                                                                                                                       
+<!-- partial:index.partial.html -->
+ <div class="init-page">
+    <div class="container">
+        <h1 class="init-page__title">Apple Concept Stocks!</h1>
+        
+        <img class="quizLOGO" scr="dog1.jpg">
+        <button class="init-page__btn btn">Start</button>
+    </div>
+</div>
+
+<div class="questions-page">
+     <audio id="correct">
+                <source src="correct.mp3" type="audio/mp3">
+                </audio>
+    <audio id="incorrect">
+                <source  src="incorrect.mp3" type="audio/mp3">
+                </audio>
+    <div class="container">
+        <h2 class="questions-page__question"></h2>
+        <ul class="questions-page__answer-list">
+            <!--  Letter A  -->
+            <!--  Answer div  -->
+            <div class="questions-page__answer-div questions-page__answer-div-a">
+                <!--  Selector div  -->
+                <div class="questions-page__selection-div"></div>
+                <!--  Feedback div -->
+                <div class="questions-page__feedback-div"></div>
+                <!--  Answer -->
+                <li class="questions-page__answer-line"><span class="alphabet">(A)</span><img class ="myImgA" style="margin-bottom: -30px"> <span class="questions-page__answer-span questions-page__answer-A" ></span></li>
+              
+         </div>
+
+            <!--  Letter B  -->
+            <!--  Answer div  -->
+            <div class="questions-page__answer-div questions-page__answer-div-b">
+                <!--  Selector div  -->
+                <div class="questions-page__selection-div"></div>
+                <!--  Feedback div -->
+                <div class="questions-page__feedback-div"></div>
+                <!--  Answer -->
+                <li class="questions-page__answer-line"><span class="alphabet">(B)</span><img class ="myImgB" style="margin-bottom: -30px">  <span class="questions-page__answer-span questions-page__answer-B" ></span></li>
+            </div>
+
+            <!--  Letter C  -->
+            <!--  Answer div  -->
+            <div class="questions-page__answer-div questions-page__answer-div-c">
+                <!--  Selector div  -->
+                <div class="questions-page__selection-div"></div>
+                <!--  Feedback div -->
+                <div class="questions-page__feedback-div"></div>
+                <!--  Answer -->
+                <li class="questions-page__answer-line"><span class="alphabet">(C)</span><img class ="myImgC" style="margin-bottom: -30px"> <span class="questions-page__answer-span questions-page__answer-C" ></span></li>
+            </div>
+
+            <!--  Letter D  -->
+            <!--  Answer div  -->
+            <div class="questions-page__answer-div questions-page__answer-div-d">
+                <!--  Selector div  -->
+                <div class="questions-page__selection-div"></div>
+                <!--  Feedback div -->
+                <div class="questions-page__feedback-div"></div>
+                <!--  Answer -->
+                <li class="questions-page__answer-line"><span class="alphabet">(D)</span><img class ="myImgD" style="margin-bottom: -30px"> <span class="questions-page__answer-span questions-page__answer-D"  ></span></li>
+            </div>
+        </ul>
+        <!--  ICON NAMES: x is   ion-close-round  , check is   ion-checkmark-round-->
+        <div class="btn-holder">
+            <button class="questions-page__submit-btn btn">Submit</button>
+            <button class="questions-page__continue-btn btn">Continue</button>
+        </div>
+    </div>
+</div>
+<div class="score">Your Score:</div>
+    <div id="scorenum">   0
+                        </div>
+<div class="results-page">
+    <div class="container">
+         <audio id="end">
+                <source src="end.mp3" type="audio/mp3">
+                </audio>
+         <audio id="end2">
+                <source  src="end100.mp3" type="audio/mp3">
+                </audio>
+        <h3 class="results-page__info">Your final score :</h3>
+        <h2 class="results-page__score">100%</h2>
+        <button class="results-page__retake-btn btn">Take it again</button>
+        
+    </div>
+</div>
+<!-- partial -->
+  <script src="../qts&game/jquery.min.js"> </script>
+   <script src="Concept.js"> </script>      
+</body>
+</html>

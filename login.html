@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="testcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <title>Win The Jackpot </title>
+</head>
+
+<body>
+
+    <div class="container-fluid loginbg">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12 login-box">
+            <div>
+                <p class="login-title text-center" style="font-family: 'Ranchers';">Login to Win The Jackpot</p>
+                <img src="牽著你走未來.png"
+                    style="height: 30vh; width: 50vh; display:block; margin:auto;">
+            </div>
+            <div class="login-third-party-login">
+                <p class="login-button-info-text login-info-text text-center">EASILY USING</p>
+                <div class="login-button-container container-fluid">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <button class="login-facebook login-button" onclick="FBLogin()">
+                            <span class="header-sprite login-fb-logo"></span>
+                            <!-- react-text: 78 -->FACEBOOK
+                            <!-- /react-text -->
+                        </button>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <button class="login-google login-button" id="gPlusLogin" onclick="GoogleLogin()">
+                            <span class="header-sprite login-gplus-logo"></span>
+                            <!-- react-text: 81 -->GOOGLE
+                            <!-- /react-text -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="login-info-text text-center">- OR USING EMAIL -</p>
+            <form class="login-login-form">
+                <fieldset class="login-input-container">
+                    <div class="login-input-item">
+                        <input type="email" class="login-user-input-email login-user-input" name="email"
+                            placeholder="Your Email Address">
+                    </div>
+                    <div class="login-input-item">
+                        <input type="password" class="login-user-input-password login-user-input" name="password"
+                            placeholder="Enter Password">
+                    </div>
+                </fieldset>
+                <fieldset class="login-login-button-container">
+                    <button class="login-login-button">Log in</button>
+                </fieldset>
+            </form>
+            <div class="login-link-container">
+                <a class="login-link" href="#">Recover password</a>
+                <div class="login-right-links">
+                    <span class="login-info-text">New to Win The Jackpot?</span>
+                    <a class="login-create-account-link login-link" href="#">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-messaging.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBf2umL61BkqJufaBGKvwZsmd0wpLrmQAE",
+            authDomain: "test-f3031.firebaseapp.com",
+            databaseURL: "https://test-f3031.firebaseio.com",
+            projectId: "test-f3031",
+            storageBucket: "test-f3031.appspot.com",
+            messagingSenderId: "763216745915",
+            appId: "1:763216745915:web:8575892908486e73de609e",
+            measurementId: "G-XNKKBEFSTR"
+        };
+        // Initialize Firebase
+        //firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script type="text/javascript">
+        //應用程式編號，進入 https://developers.facebook.com/apps/ 即可看到
+        let FB_appID = "633575047536520";
+
+        //FB Login 官方文件：https://developers.facebook.com/docs/facebook-login/web
+
+        // Load the Facebook Javascript SDK asynchronously
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: FB_appID,//FB appID
+                cookie: true,  // enable cookies to allow the server to access the session
+
+                xfbml: true,  // parse social plugins on this page
+                version: 'v8.0' // use graph api version
+            });
+
+        };
+
+        //使用自己客製化的按鈕來登入
+        function FBLogin() {
+
+            FB.login(function (response) {
+                //debug用
+                console.log(response);
+                if (response.authResponse) {
+                    //user已登入FB
+                    //抓userID
+                    let FB_ID = response["authResponse"]["userID"];
+                    console.log("userID:" + FB_ID);
+
+                    //console.log('Welcome!  Fetching your information.... ');
+                    var unsubscribe = firebase.auth().onAuthStateChanged(function (firebaseUser) {
+                        unsubscribe();
+                        // Check if we are already signed-in Firebase with the correct user.
+                        if (!isUserEqual(response.authResponse, firebaseUser)) {
+                            // Build Firebase credential with the Facebook auth token.
+                            var credential = firebase.auth.FacebookAuthProvider.credential(
+                                response.authResponse.accessToken);
+                            // Sign in with the credential from the Facebook user.
+                            firebase.auth().onAuthStateChanged(function (firebaseUser) {
+                                if (firebaseUser) {
+                                    userId = firebaseUser.uid;
+                                    name = firebaseUser.displayName;
+                                    email = firebaseUser.email;
+                                    var postData = {
+                                        userID: userId,
+                                        username: name,
+                                        email: email,
+                                        token: userToken
+                                    }
+                                    firebase.database().ref('users/' + userId + '/').update(postData);
+                                }
+                            });
+                            firebase.auth().signInWithCredential(credential).catch(function (error) {
+                                // Handle Errors here.
+                                var errorCode = error.code;
+                                var errorMessage = error.message;
+                                // The email of the user's account used.
+                                var email = error.email;
+                                // The firebase.auth.AuthCredential type that was used.
+                                var credential = error.credential;
+                                // ...
+
+                            });
+                        } else {
+                            // User is already signed-in Firebase with the correct user.
+                            console.log('User already signed-in Firebase.');
+                        }
+                    });
+
+                    FB.api('/me', function (response) {
+                        console.log('Successful login for: ' + response.name);
+                        //FB_justify_notifyAPI();
+                        //FB_justify_showMess(response.name);
+                    });
+                    // window.location = 'https://rorubyy.github.io/ruby/dawho';
+                    window.setTimeout("window.location='https://rorubyy.github.io/ruby/index.html'", 3000);
+                    //alert("成功用Facebook帳號登入");
+
+
+                } else {
+                    // user FB取消授權
+                    firebase.auth().signOut();
+                    alert("Facebook帳號無法登入");
+                }
+                if (event.authResponse) {
+                    // User is signed-in Facebook.
+                    var unsubscribe = firebase.auth().onAuthStateChanged(function (firebaseUser) {
+                        unsubscribe();
+                        // Check if we are already signed-in Firebase with the correct user.
+                        if (!isUserEqual(event.authResponse, firebaseUser)) {
+                            // Build Firebase credential with the Facebook auth token.
+                            var credential = firebase.auth.FacebookAuthProvider.credential(
+                                event.authResponse.accessToken);
+                            // Sign in with the credential from the Facebook user.
+                            firebase.auth().signInWithCredential(credential).catch(function (error) {
+                                // Handle Errors here.
+                                var errorCode = error.code;
+                                var errorMessage = error.message;
+                                // The email of the user's account used.
+                                var email = error.email;
+                                // The firebase.auth.AuthCredential type that was used.
+                                var credential = error.credential;
+                                // ...
+                                if (errorCode === 'auth/account-exists-with-different-credential') {
+                                    alert('Email already associated with another account.');
+                                } else {
+                                    console.error(error);
+                                }
+                            });
+                        } else {
+                            // User is already signed-in Firebase with the correct user.
+                        }
+                    });
+                } else {
+                    // User is signed-out of Facebook.
+                    firebase.auth().signOut();
+                }
+
+            }, { scope: 'public_profile,email' });
+        }
+
+        function isUserEqual(facebookAuthResponse, firebaseUser) {
+            if (firebaseUser) {
+                var providerData = firebaseUser.providerData;
+                for (var i = 0; i < providerData.length; i++) {
+                    if (providerData[i].providerId === firebase.auth.FacebookAuthProvider.PROVIDER_ID &&
+                        providerData[i].uid === facebookAuthResponse.userID) {
+                        // We don't need to re-auth the Firebase connection.
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+    </script>
+
+
+
+    <!--Google登入-->
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};HandleGoogleApiLibrary()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+    <script type="text/javascript">
+        //進入 https://console.developers.google.com/，找「憑證」頁籤(記得先選對專案)，即可找到用戶端ID
+        let Google_appId = "763216745915-386sefq7mqmlh99orn7bhbt290329402.apps.googleusercontent.com";
+
+
+        //參考文章：http://usefulangle.com/post/55/google-login-javascript-api 
+
+        // Called when Google Javascript API Javascript is loaded
+        function HandleGoogleApiLibrary() {
+            // Load "client" & "auth2" libraries
+            gapi.load('client:auth2', {
+                callback: function () {
+                    // Initialize client & auth libraries
+                    gapi.client.init({
+                        clientId: Google_appId,
+                        scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me'
+                    }).then(
+                        function (success) {
+                            // Google Libraries are initialized successfully
+                            // You can now make API calls 
+                            console.log("Google Libraries are initialized successfully");
+                        },
+                        function (error) {
+                            // Error occurred
+                            console.log(error);// to find the reason 
+                        }
+                    );
+                },
+                onerror: function () {
+                    // Failed to load libraries
+                    console.log("Failed to load libraries");
+                }
+            });
+        }
+        //cloud-messaging
+        const messaging = firebase.messaging();
+        messaging.usePublicVapidKey('BJZ0GlXbOZD_Xb0JTHZiLg9wlQN7HCwEd6q4VtdmROfL0vezkE3y8dmFztu3tbQ1rlE681RfzeVZbsVg3G0vQBk');
+
+        var userToken;
+        // Get Instance ID token. Initially this makes a network call, once retrieved
+        // subsequent calls to getToken will return from cache.
+        // Callback fired if Instance ID token is updated.
+        messaging.onTokenRefresh(() => {
+            messaging.getToken().then((refreshedToken) => {
+                console.log('Token refreshed.');
+                // Indicate that the new Instance ID token has not yet been sent to the
+
+                // ...
+            }).catch((err) => {
+                console.log('Unable to retrieve refreshed token ', err);
+                //showToken('Unable to retrieve refreshed token ', err);
+            });
+        });
+        messaging.getToken().then((currentToken) => {
+            if (currentToken) {
+                userToken = currentToken;
+                console.log(userToken);
+                //sendTokenToServer(currentToken);
+                //updateUIForPushEnabled(currentToken);
+            } else {
+                // Show permission request.
+                console.log('No Instance ID token available. Request permission to generate one.');
+                // Show permission UI.
+                //updateUIForPushPermissionRequired();
+                //setTokenSentToServer(false);
+            }
+        }).catch((err) => {
+            console.log('An error occurred while retrieving token. ', err);
+            //showToken('Error retrieving Instance ID token. ', err);
+            //setTokenSentToServer(false);
+        });
+
+        function GoogleLogin() {
+            // API call for Google login  
+            gapi.auth2.getAuthInstance().signIn().then(
+                function (success) {
+                    // Login API call is successful 
+                    console.log(success);
+                    let Google_ID = success["El"];
+                    var googleUser = gapi.auth2.getAuthInstance().currentUser.get();
+                    var profile = googleUser.getBasicProfile();
+                    //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                    //console.log('Full Name: ' + profile.getName());
+
+                    // We need to register an Observer on Firebase Auth to make sure auth is initialized.
+                    var unsubscribe = firebase.auth().onAuthStateChanged(function (firebaseUser) {
+                        unsubscribe();
+                        // Check if we are already signed-in Firebase with the correct user.
+
+                        if (!isUserEqual_GOOGLE(googleUser, firebaseUser)) {
+
+
+                            // Build Firebase credential with the Google ID token.
+                            var credential = firebase.auth.GoogleAuthProvider.credential(
+                                googleUser.getAuthResponse().id_token);
+                            // Sign in with credential from the Google user.
+
+                            console.log(credential);
+                            firebase.auth().onAuthStateChanged(function (firebaseUser) {
+                                if (firebaseUser) {
+                                    userId = firebaseUser.uid;
+                                    name = firebaseUser.displayName;
+                                    email = firebaseUser.email;
+                                    var postData = {
+                                        userID: userId,
+                                        username: name,
+                                        email: email,
+                                        token: userToken
+                                    }
+                                    firebase.database().ref('users/' + userId + '/').update(postData);
+
+                                }
+                            });
+
+                            firebase.auth().signInWithCredential(credential).catch(function (error) {
+                                // Handle Errors here.
+                                console.log(error);
+                                var errorCode = error.code;
+                                var errorMessage = error.message;
+                                // The email of the user's account used.
+                                var email = error.email;
+                                // The firebase.auth.AuthCredential type that was used.
+                                var credential = error.credential;
+                                // ...
+                                if (errorCode === 'auth/account-exists-with-different-credential') {
+                                    alert('Email already associated with another account.');
+                                } else {
+                                    console.error(error);
+                                }
+                            });
+                        } else {
+                            /*userId = firebaseUser.uid;
+                            name = firebaseUser.displayName;
+                            email = firebaseUser.email;
+                            console.log(userToken);
+                            firebase.database().ref('users/').set({
+                                userID: userId,
+                                username: name,
+                                email: email,
+                                token: userToken
+                            });*/
+                            console.log('User already signed-in Firebase.');
+                        }
+                    });
+
+                    //window.localStorage.setItem("googlename", profile.getName());
+                    $.cookie('googlename',profile.getName());
+                    console.log(profile.getName());
+                    window.setTimeout("window.location='https://jean870809.github.io/ruby/index.html'", 3000);
+                },
+                function (error) {
+                    // Error occurred
+                    // console.log(error) to find the reason
+                    console.log(error);
+                }
+            );
+
+        }
+        function isUserEqual_GOOGLE(googleUser, firebaseUser) {
+            if (firebaseUser) {
+                var providerData = firebaseUser.providerData;
+                for (var i = 0; i < providerData.length; i++) {
+                    if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
+                        providerData[i].uid === googleUser.getBasicProfile().getId()) {
+                        // We don't need to reauth the Firebase connection.
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
+
+
+    </script>
+
+    <!--有些網站會做帳號和user FB帳號的綁定/解除綁定，或你想讓使用者刪除你的FB App，讓使用者下次可以切換不同FB帳號登入你的網站-->
+    <!--下面程式碼派得上用場-->
+    <script type="text/javascript">
+
+        //刪除使用者已授權你的FB App，好讓使用者下次重新授權你的FB App
+        //參考：https://stackoverflow.com/questions/6634212/remove-the-application-from-a-user-using-graph-api/7741978#7741978
+        function Del_FB_App() {
+            FB.getLoginStatus(function (response) {//取得目前user是否登入FB網站
+                //debug用
+                console.log(response);
+                if (response.status === 'connected') {
+                    // Logged into Facebook.
+                    //抓userID
+                    FB.api("/me/permissions", "DELETE", function (response) {
+                        console.log("刪除結果");
+                        console.log(response); //gives true on app delete success 
+                    });
+                } else {
+                    // FB取消授權
+                    console.log("無法刪除FB App");
+                }
+            });
+
+
+        }
+
+    </script>
+
+    <!--類似上面Delete FB App的效果，呼叫此function後，下次使用者想再Google登入你的網站就必須重新選擇帳號-->
+    <script type="text/javascript">
+
+        //參考：https://developers.google.com/identity/sign-in/web/disconnect
+
+        function Google_disconnect() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.disconnect().then(function () {
+                console.log('User disconnect.');
+            });
+        }
+
+
+    </script>
+
+</body>
+
+</html>

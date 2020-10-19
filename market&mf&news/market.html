@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <title>Win The Jackpot </title>
+    <!--改籤頁的標題 -->
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://jean870809.github.io/ruby/index.html">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="">
+    <link rel="canonical" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="../dawho1.css">
+    <link rel="stylesheet" href="../dawho2.css">
+    <link rel="stylesheet" href="tabletab.css">
+    <link rel="stylesheet" href="marketstyle.css">
+    <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1'
+        type='text/css' media='all' />
+
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+</head>
+
+<body class="f_HanSans_light">
+    
+    <div id="menu">
+        <div class="container">
+            <header class="head">
+                <input id="control_menu" type="checkbox" name="checkbox">
+                <div class="menu font_Gen_bold">
+                    <a class="logo_a" href="../index.html"><img class="logo" src="image1.png"></a>
+                    <a class="btn_label">
+                        <label class="label_block" for="control_menu"></label></a>
+                    <nav class="nav" style="font-family: 'Ranchers';"><a class="menu_item" href="../index.html">Home</a><a
+                            class="menu_item" href="market.html">Market</a>
+                            <a class="menu_item" href="myfavorite.html">MyFavorite</a>
+                        <a class="menu_item" href="../qts&game/qts.html">Recommendation</a>
+                        <a></a>
+                        <a class="menu_item" href="news.html">News</a>
+                        <a class="menu_item" href="../gamecard/ruby_card.html">Game</a>
+                        <a class="btn_gold shadow menu_btn_gold" href="login.html" id="name">Login</a>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div id="main">
+        <!-- Banner -->
+        <section id="banner" class="major">
+            <div class="inner">
+                <header class="major">
+                    <h1 style="text-align:center; color: black;">MARKET</h1>
+                </header>
+            </div>
+        </section>
+
+        <!-- Main -->
+        <!-- 頁籤 -->
+        <div id="tab-demo">
+            <ul class="tab-title">
+                <li><a href="#tab01" style="font-weight:bold;">TODAY</a></li>
+                <li><a href="#tab02" style="font-weight:bold;">HISTORY</a></li>
+                <li><a href="#tab03" style="font-weight:bold;">INDICES</a></li>
+            </ul>
+            <div id="tab01" class="tab-inner">
+                <!-- 股價表-->
+                <center>
+                    <table id="fruit_table" style="height: 150px; width: 70%; text-align:center;">
+                        <colgroup>
+                            <col style="background:rgb(8, 0, 0)">
+                            <col span="5" style="background:rgb(7, 0, 0)">
+                        </colgroup>
+                        <h2>TODAY</h2>
+                        <thead>
+                            <tr>
+                                <th id="fruit_name">NAME</th>
+                                <th id="fruit_price">OPEN</th>
+                                <th id="fruit_inventory">HIGH</th>
+                                <th id="fruit_inventory">LOW</th>
+                                <th id="fruit_inventory">CLOSE</th>
+                                <th id="fruit_inventory">CHG.</th>
+                                <th id="fruit_inventory">VOL.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td headers="fruit_price" ><img src="img/AAPL.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/MCD.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/NKE.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/KO.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                <td headers="fruit_inventory">164.39</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                <td headers="fruit_inventory">1.14M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/HD.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                <td headers="fruit_inventory">132.90</td>
+                                <td headers="fruit_price">130.53</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                <td headers="fruit_inventory">71.37M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/MMM.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/PFE.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/BA.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/CAT.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/CSCO.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/CVX.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/DD.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                <td headers="fruit_inventory">164.39</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                <td headers="fruit_inventory">1.14M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/DIS.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                <td headers="fruit_inventory">132.90</td>
+                                <td headers="fruit_price">130.53</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                <td headers="fruit_inventory">71.37M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/IBM.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/INTC.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/JNJ.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/MRK.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/UNH.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/UTX.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/V.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                <td headers="fruit_inventory">164.39</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                <td headers="fruit_inventory">1.14M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/VZ.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                <td headers="fruit_inventory">132.90</td>
+                                <td headers="fruit_price">130.53</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                <td headers="fruit_inventory">71.37M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/WBA.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/WMT.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/XOM.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/GS.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/JPM.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                <td headers="fruit_inventory">164.39</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                <td headers="fruit_inventory">1.14M</td>
+                              </tr>
+                              <tr>
+                                <td headers="fruit_price" ><img src="img/PG.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                <td headers="fruit_inventory">132.90</td>
+                                <td headers="fruit_price">130.53</td>
+                                <td headers="fruit_price">161.64</td>
+                                <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                <td headers="fruit_inventory">71.37M</td>
+                              </tr>
+                              <tr>
+                               <td headers="fruit_price" ><img src="img/MSFT.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">164.35</td>
+                                 <td headers="fruit_inventory">164.39</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory " style="color:green;">+0.84%</td>
+                                 <td headers="fruit_inventory">1.14M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/TRV.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">132.21</td>
+                                 <td headers="fruit_inventory">132.90</td>
+                                 <td headers="fruit_price">130.53</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:green;">+2.43%</td>
+                                 <td headers="fruit_inventory">71.37M</td>
+                               </tr>
+                               <tr>
+                                <td headers="fruit_price" ><img src="img/AXP.png" style="height: 50px; width: 50px;"></td>
+                                <td headers="fruit_price">41.92</td>
+                                 <td headers="fruit_inventory">42.03</td>
+                                 <td headers="fruit_price">41.50</td>
+                                 <td headers="fruit_price">161.64</td>
+                                 <td headers="fruit_inventory" style="color:red;">-0.70%</td>
+                                 <td headers="fruit_inventory">9.18M</td>
+                               </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+            <div id="tab02" class="tab-inner">
+                <!-- 股價圖-->
+                <!--button type="button" onclick="dooutput()">確認 onchange="dooutput(this)"</button-->
+                <center>
+                    <h2>HISTORY</h2>
+                </center>
+                <center><input type="month" id="start" value="2018-11" min="2009-12" max="2019-11">&nbsp;<input
+                        type="month" id="end" value="2019-10" min="2009-12" max="2019-11">&nbsp;<button
+                        onclick="getcsv();">確認</button></center>
+                <center><select name="select" id="selectTest" onclick="dooutput()">
+                        <option>請選擇公司</option>
+                        <option value="0" id="AAPL">AAPL</option>
+                        <option value="1" id="AXP">AXP</option>
+                        <option value="2" id="BA">BA</option>
+                        <option value="3" id="CAT">CAT</option>
+                        <option value="4" id="CSCO">CSCO</option>
+                        <option value="5" id="CVX">CVX</option>
+                        <option value="6" id="DIS">DIS</option>
+                        <option value="7" id="DD">DD</option>
+                        <option value="8" id="GS">GS</option>
+                        <option value="9" id="HD">HD</option>
+                        <option value="10" id="IBM">IBM</option>
+                        <option value="11" id="INTC">INTC</option>
+                        <option value="12" id="JNJ">JNJ</option>
+                        <option value="13" id="KO">KO</option>
+                        <option value="14" id="MCD">MCD</option>
+                        <option value="15" id="MMM">MMM</option>
+                        <option value="16" id="MRK">MRK</option>
+                        <option value="17" id="MSFT">MSFT</option>
+                        <option value="18" id="NKE">NKE</option>
+                        <option value="19" id="PFE">PFE</option>
+                        <option value="20" id="PG">PG</option>
+                        <option value="21" id="TRV">TRV</option>
+                        <option value="22" id="UNH">UNH</option>
+                        <option value="23" id="UTX">UTX</option>
+                        <option value="24" id="V">V</option>
+                        <option value="25" id="VZ">VZ</option>
+                        <option value="26" id="BA">BA</option>
+                        <option value="27" id="WBA">WBA</option>
+                        <option value="28" id="WMT">WMT</option>
+                        <option value="29" id="XOM">XOM</option>
+                    </select></center>
+                <center>
+                    <div id="stockChartContainer" style="height: 400px; width: 80%;"></div>
+                </center>
+            </div>
+            <div id="tab03" class="tab-inner">
+                <center>
+                    <table id="fruit_table" style="height: 150px; width: 70%; text-align:center;">
+                        <colgroup>
+                            <col style="background:rgb(8, 0, 0)">
+                            <col span="5" style="background:rgb(7, 0, 0)">
+                        </colgroup>
+                        <h2>INDICES</h2>
+
+                        <tbody>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold; "> 
+                                    <input type="button" id="0" name="mybutton" value="DOW30" onclick="doindicechart()" style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">27,194.23</td>
+                                <td headers="fruit_price" style="color: green; font-size: 20px;">+0.17%</td>
+                            </tr>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="S&P"
+                                        style=" font-size: 20px;box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">3,295.29</td>
+                                <td headers="fruit_price" style="color: green; font-size: 20px;">+0.43%</td>
+                            </tr>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="NASDAQ" 
+                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">10,828.58</td>
+                                <td headers="fruit_price" style="color: green;">+0.46%</td>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="RUSSEL2000"
+                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">1,484.19</td>
+                                <td headers="fruit_price" style="font-size: 20px; color: green;">+0.47%</td>
+                            </tr>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="NYSE"
+                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">12749.79</td>
+                                <td headers="fruit_price" style="font-size: 20px; color: green;">+0.46%</td>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="SOX"
+                                        style=" font-size: 20px;box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">2221.12</td>
+                                <td headers="fruit_price" style="color: green; font-size: 20px;">+0.47%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+                <div id="indice1" style="height: 400px; width: 49.8%; display: inline-block;" class="indicechart"></div>
+                <div id="indice2" style="height: 400px; width: 49.8%; display: inline-block;" class="indicechart"></div>
+                <div id="indice3" style="height: 400px; width: 49.8%; display: inline-block;" class="indicechart"></div>
+                <div id="indice4" style="height: 400px; width: 49.8%; display: inline-block;" class="indicechart"></div>
+                <div id="indice5" style="height: 400px; width: 49.8%; display: inline-block;" class="indicechart"></div>
+                <div id="indice6" style="height: 400px; width: 49.8%; display: inline-block;" class="indicechart"></div>
+
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        var company = [], m = [], date = [], file = [];
+
+        for (var j = 0; j < 30; j++) {
+            company[j] = [];
+        }
+        var syear, smonth, eyear, emonth, mindex = 0, index = 0, count;
+        function getcsv() {
+            file.length = 0;
+            index = 0;
+            date.length = 0;
+            for (var j = 0; j < 30; j++) {
+                company[j] = [];
+            }
+            var start = document.getElementById("start");
+            //console.log(start.value.split('-'));
+            var tempm = start.value.split('-');
+            syear = parseInt(tempm[0]);
+            smonth = parseInt(tempm[1]);
+            var end = document.getElementById("end");
+            //console.log(end.value.split('-'));
+            tempm = end.value.split('-');
+            eyear = parseInt(tempm[0]);
+            emonth = parseInt(tempm[1]);
+            var i, j = 0, year = 0, month = 0;
+            count = 0;
+            if (eyear == syear) { //same year
+                index = 0;
+                if (emonth == smonth) {//same month
+                    if (emonth < 10)
+                        var filename = "M2M/train_" + String(eyear) + "_0" + String(emonth) + "(" + String(syear) + " Q1).csv";
+                    else
+                        var filename = "M2M/train_" + String(eyear) + "_" + String(emonth) + "(" + String(syear) + " Q1).csv";
+                    count = 1;
+                    file.push(filename);
+                }
+                else if (emonth > smonth) {//end > start
+                    count = emonth - smonth + 1;
+                    month = smonth;
+                    year = syear;
+                    for (i = 0; i < count; i++) {
+                        if (month < 10)
+                            var filename = "M2M/train_" + String(year) + "_0" + String(month) + "(" + String(year) + " Q1).csv";
+                        else
+                            var filename = "M2M/train_" + String(year) + "_" + String(month) + "(" + String(year) + " Q1).csv";
+                        file.push(filename);
+                        month++;
+                    }
+                }
+                else
+                    alert("請輸入正確日期");
+            }
+            else if (eyear > syear) {
+                index = 0;
+                if (emonth > smonth) {
+                    count = eyear - syear - 1;
+                    count *= 12;
+                    count += 12 + emonth - smonth + 1;
+                }
+                else if (emonth <= smonth) {
+                    count = eyear - syear;
+                    count *= 12;
+                    count += emonth - smonth + 1;
+                }
+                month = smonth;
+                year = syear;
+                for (i = 0; i < count; i++) {
+                    if (month < 10)
+                        var filename = "M2M/train_" + String(year) + "_0" + String(month) + "(" + String(year) + " Q1).csv";
+                    else
+                        var filename = "M2M/train_" + String(year) + "_" + String(month) + "(" + String(year) + " Q1).csv";
+
+                    file.push(filename);
+                    if (month == 12) {
+                        month = 1;
+                        year += 1;
+                    }
+                    else
+                        month++;
+                }
+            }
+            else {
+                alert("請輸入正確日期");
+            }
+            // dooutput();
+            // var filename = "M2M/train_"+year+"_"+month+"("+year+" Q1).csv";
+            //getdata(filename,company);
+            getdata(file, 0);
+            //dooutput();
+        }
+        function getdata(filename, tmp) {
+            var j = 0;
+            if (tmp < count)
+                d3.csv(filename[tmp], function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].Date != undefined)
+                            date.push(data[i].Date);
+                        j = 0;
+                        for (var x in data[0]) {
+                            if (j > 0 && j < 31 && data[i][x] != undefined) {
+                                //console.log(data[i][x]);
+                                company[j - 1][index] = parseInt(data[i][x]);
+                                //console.log(index);
+                            }
+                            j++
+                        }
+                        index++;
+                    }
+                    getdata(filename, ++tmp);
+                });
+
+        }
+        function dooutput() {
+            var myObj = document.getElementById("selectTest");
+            var newdate = [];
+            newdate.length = 0;
+            // console.log(company[0][1]);
+            //console.log(date);
+            for (var i = 0; i < date.length; i++) {
+                newdate.push(date[i].split("/"));
+            }
+            var y = 0, count = 0, dateindex = 0;
+            var dataPoints = [];
+            var data = []; var dataSeries = { type: "spline" };
+            var tmp = parseInt(myObj.value);
+            //console.log(company[0].length-1); 
+            for (var j = 0; j < company[0].length; j++) {
+                //console.log(newdate[dateindex][0]);
+                //console.log(newdate[dateindex][1]);
+                //console.log(newdate[dateindex][2]);
+                //console.log(company[tmp][j]);
+                dataPoints.push({ x: new Date(newdate[dateindex][0] + "-" + newdate[dateindex][1] + "-" + newdate[dateindex++][2]), y: company[tmp][j] });
+            }
+
+            //parseInt(newdate[dateindex][0]),parseInt(newdate[dateindex][1]),parseInt(newdate[dateindex++][2])
+            // console.log(dataPoints);
+            dataSeries.dataPoints = dataPoints;
+            data.push(dataSeries);
+            var stockChart = new CanvasJS.StockChart("stockChartContainer", {
+                exportEnabled: true,
+                animationEnabled: true,
+                // exportEnabled: true,
+                title: {
+                },
+                charts: [{
+                    axisX: {
+                        viewportMinimum: 0,
+                        minimum: 0,
+                        labelFontSize: 8.5,
+                        crosshair: {
+                            enabled: true,
+                            snapToDataPoint: true,
+                        }
+                    },
+                    axisY: {
+                        //viewportMinimum: 1,
+                        title: "Dollars",
+                        prefix: "$",
+                        crosshair: {
+                            enabled: true,
+                            //snapToDataPoint: true,
+                        }
+                    },
+                    data: [{
+                        type: "line",
+                        yValueFormatString: "$#,###.##",
+                        dataPoints: dataPoints
+                    }]
+                }],
+                data: data,
+                navigator: {
+                    slider: {
+                        minimum: new Date(newdate[0][0], newdate[0][1] - 1, newdate[0][2]),
+                        maximum: new Date(newdate[newdate.length - 1][0], newdate[newdate.length - 1][1], newdate[newdate.length - 1][2])
+                    }
+                }
+                ,
+                rangeSelector: {
+                    enabled: true,
+                    inputFields: {
+                        startValue: new Date(newdate[0][0], newdate[0][1] - 1, newdate[0][2]),
+                        endValue: new Date(newdate[newdate.length - 1][0], newdate[newdate.length - 1][1], newdate[newdate.length - 1][2]),
+                        //endValue: 20,
+                        valueFormatString: "MM-DD-YYYY"
+                    },
+                    buttons: [{
+                        label: "a week",
+                        range: 1,
+                        rangeType: "week"
+                    }, {
+                        label: "a month",
+                        range: 1,
+                        rangeType: "month"
+                    }, {
+                        label: "a season",
+                        range: 3,
+                        rangeType: "month"
+                    }, {
+                        label: "a year",
+                        range: 1,
+                        rangeType: "year"
+                    },
+                    {
+                        label: "All ",
+                        rangeType: "all"
+                    }]
+                }
+            });
+            stockChart.render();
+        }
+        var indice = [], indicedate = [];
+        function doindicechart(){
+          getdata2("DOW30", "indice1");
+          getdata2("S&P", "indice2");
+          getdata2("NASDAQ", "indice3");
+          getdata2("RUSSEL2000", "indice4");
+          getdata2("NYSE", "indice5");
+          getdata2("SOX", "indice6");
+        }
+        function getdata2(tmp, chart) {
+            filename = "csv/" + tmp + ".csv";
+            d3.csv(filename, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    indicedate.push(data[i].Date);
+                    indice.push(data[i].Close);
+                }
+                indicechart(tmp, chart);
+            });
+        }
+        function indicechart(tmp, chart) {
+            console.log(chart);
+            var dataPoint = [];
+            var data = [];
+            var dataSeries = { type: "spline" };
+            for (var i = 0; i < indicedate.length; i++) {
+                dataPoint.push({ x: new Date(indicedate[i]), y: parseInt(indice[i]) });
+            }
+            //console.log(dataPoint);
+            dataSeries.dataPoints = dataPoint;
+            data.push(dataSeries);
+            var stockChart = new CanvasJS.StockChart(chart, {
+                exportEnabled: true,
+                animationEnabled: true,
+                // exportEnabled: true,
+                title: {
+                    text: tmp
+                },
+                charts: [{
+                    axisX: {
+                        viewportMinimum: 0,
+                        minimum: 0,
+                        labelFontSize: 7,
+                        crosshair: {
+                            enabled: true,
+                            snapToDataPoint: true,
+                        }
+                    },
+                    axisY: {
+                        //viewportMinimum: 1,
+                        title: "Dollars",
+                        prefix: "$",
+                        crosshair: {
+                            enabled: true,
+                            //snapToDataPoint: true,
+                        }
+                    },
+                    data: [{
+                        type: "line",
+                        yValueFormatString: "$#,###.##",
+                        dataPoints: dataPoint
+                    }]
+                }],
+                data: data,
+                navigator: {
+                    slider: {
+                        //minimum: new Date(indicedate[0]),
+                        //maximum: new Date(indicedate[indicedate.length-1])
+                    }
+                }
+                ,
+                rangeSelector: {
+                    enabled: true,
+                    inputFields: {
+                        //startValue: new Date(indicedate[0]),
+                        //endValue: new Date(indicedate[indicedate.length-1]),
+                        //endValue: 20,
+                        //valueFormatString: 	"MM-DD-YYYY"
+                    },
+                    buttons: [{
+                        label: "a week",
+                        range: 1,
+                        rangeType: "week"
+                    }, {
+                        label: "a month",
+                        range: 1,
+                        rangeType: "month"
+                    }, {
+                        label: "a season",
+                        range: 3,
+                        rangeType: "month"
+                    },
+                    {
+                        label: "All ",
+                        rangeType: "all"
+                    }]
+                }
+            });
+            stockChart.render();
+            indice.length = 0;
+            indicedate.length = 0;
+        }
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/canvasjs-stock-1.0.7/canvasjs.stock.min.js"></script>
+    <script src="assets/js/canvasjs-stock-1.0.7/jquery.canvasjs.stock.min.js"></script>
+    <script>
+        $(function () {
+            var $li = $('ul.tab-title li');
+            $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+
+            $li.click(function () {
+                $($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
+                $(this).addClass('active').siblings('.active').removeClass('active');
+            });
+        });
+    </script>
+
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src = "assets/js/dawho4.js"></script>
+    <script src = "assets/js/dawho6.js"></script>
+    <script src = "assets/js/dawho7.js"></script>
+    <script src = "assets/js/dawho8.js"></script>
+    <script src = "assets/js/dawho9.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+        var name = $.cookie('googlename')
+        console.log(name);
+        if (name != 'undefined') {
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('name').setAttribute("href", "javascript: void(0)");
+        }
+    </script>
+
+</body>
+
+</html>

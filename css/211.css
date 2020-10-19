@@ -1,0 +1,75 @@
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+body {
+    margin: 0;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased
+}
+
+* {
+    box-sizing: border-box
+}
+
+svg {
+    display: block
+}
+
+#viz-ui {
+    position: relative;
+    width: 100%
+}
+
+#viz-ui .fl-controls-container {
+    margin-right: 1em
+}
+
+#viz-ui #filter-control,
+#viz-ui #horse-controls {
+    display: inline-block;
+    vertical-align: top
+}
+
+#viz-ui #replay {
+    cursor: pointer
+}
+
+.x.axis line,
+.x.axis path {
+    display: none
+}
+
+.x.axis text,
+.y.axis text {
+    font-size: 11px
+}
+
+.check circle,
+.check line,
+.end.circle,
+.horse,
+.name-bg,
+.name-fg,
+.rank-number,
+image {
+    transition: 50ms opacity linear
+}
+
+.rank-number {
+    font-weight: 700
+}
+
+.tick line {
+    opacity: 1
+}
+
+#replay {
+    display: table-cell
+}
+
+
+/*# sourceMappingURL=style.css.map */
