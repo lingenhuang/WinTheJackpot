@@ -35,21 +35,33 @@
 
     <style>
         #drag_pic{
-          width: 60%;
-          height: 400px;
+          width: 32%;
+          height: 700px;
           padding: 10px;
           border: 0px solid #aaaaaa;
+          position: absolute;
+          left:100px;
         }
         #div1{
-          width: 500px;
-          height: 400px;
+          width: 700px;
+          height: 350px;
           border: 0px solid #aaaaaa;
+          position: absolute;
+          top:250px;
+          left:780px;
         }
         
         .f_HanSans_light{
             background-repeat: no-repeat;
-            background-position: 50% 100%;
-            background-size: 600px 600px;
+            background-position: 80% 150px;
+            background-size: 800px 700px;
+        }
+        #but{
+            font-size: 20px;
+            width: 200px;
+            position: absolute;
+            top:600px;
+            left: 1300px;
         }
         /*.img_select{
             position: absolute;
@@ -62,7 +74,7 @@
         </style>
 </head>
 
-<body class="f_HanSans_light" background="img/heart.webp">
+<body class="f_HanSans_light" background="img/LOVE.png">
        <div id="menu">
         <div class="container">
             <header class="head">
@@ -93,7 +105,7 @@
             </div>
         </section>
         
-        <center><div id = "drag_pic" ondrop="droponS(event)" ondragover="allowDrop(event)">
+        <div id = "drag_pic" ondrop="droponS(event)" ondragover="allowDrop(event)">
             <img src="img/AAPL.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" style="z-index: 1000;" id=0>
             <img src="img/AXP.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=1 >
             <img src="img/BA.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=2>
@@ -124,9 +136,9 @@
             <img src="img/WBA.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=27>
             <img src="img/WMT.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=28>
             <img src="img/XOM.png" width="75px" height="75px" draggable="true" ondragstart="drag(event)" id=29>
-        </div></center>
-        <center><div id="div1" ondrop="droponD(event)" ondragover="allowDrop(event)"  ></div></center>
-        <center><input type="button" value="SUBMIT" onclick="dochart()"></center>
+        </div>
+        <div id="div1" ondrop="droponD(event)" ondragover="allowDrop(event)"  ></div>
+        <input id ="but" type="button" value="SUBMIT" onclick="dochart()">
         
     </div>
     <!-- script -->
