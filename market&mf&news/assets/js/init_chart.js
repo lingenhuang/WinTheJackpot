@@ -64,7 +64,6 @@ function getdata(filename, c){
             }
             getdata(filename,++c);
             document.getElementById("trend").innerHTML = yourtrend;
-            document.getElementById("risk").innerHTML = risk;
             console.log(yourtrend);
             console.log(Y);
             console.log(realY);
