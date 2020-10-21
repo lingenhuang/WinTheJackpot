@@ -60,6 +60,7 @@ var audio4 = document.getElementById("end2");
 var audio5 = document.getElementById("dis");
 var audio6 = document.getElementById("mcd");
 var audio7 = document.getElementById("intc");
+var audio8 = document.getElementById("msft");
 
 $(document).ready(function () {
 
@@ -128,14 +129,14 @@ $(document).ready(function () {
             correctAnswer: "MCD"
     },
         {
-            question: "4. Which one is INTC(Intel)?",
+            question: "4. Which one is Intel(INTC)?",
             answers: ["MSFT", "KO", "MCD", "INTC"],
             correctAnswer: "INTC"
     },
         {
-            question: "5. Which one is 3M(MMM)?",
+            question: "5. Which one is MicroSoft(MSFT)?",
             answers: ["MSFT", "KO", "MCD", "MMM"],
-            correctAnswer: "MMM"
+            correctAnswer: "MSFT"
     }
   ];
 
@@ -343,6 +344,9 @@ $(document).ready(function () {
         }
         if (questionCounter == 2) {
             audio7.play();
+        }
+        if (questionCounter == 3) {
+            audio8.play();
         }
         // Increment question number until there are no more questions, then advance to the next page
         if (questionCounter < quiz.length - 1) {
