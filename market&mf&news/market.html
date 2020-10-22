@@ -415,12 +415,6 @@
                             </tr>
                             <tr>
                                 <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
-                                        name="mybutton" value="NASDAQ" 
-                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
-                                <td headers="fruit_price" style="font-size: 20px;">10,828.58</td>
-                                <td headers="fruit_price" style="color: green;">+0.46%</td>
-                            <tr>
-                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
                                         name="mybutton" value="RUSSEL2000"
                                         style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
                                 <td headers="fruit_price" style="font-size: 20px;">1,484.19</td>
@@ -428,17 +422,26 @@
                             </tr>
                             <tr>
                                 <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
-                                        name="mybutton" value="NYSE"
-                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
-                                <td headers="fruit_price" style="font-size: 20px;">12749.79</td>
-                                <td headers="fruit_price" style="font-size: 20px; color: green;">+0.46%</td>
-                            <tr>
-                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
                                         name="mybutton" value="SOX"
                                         style=" font-size: 20px;box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
                                 <td headers="fruit_price" style="font-size: 20px;">2221.12</td>
                                 <td headers="fruit_price" style="color: green; font-size: 20px;">+0.47%</td>
                             </tr>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="NASDAQ" 
+                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">10,828.58</td>
+                                <td headers="fruit_price" style="color: green;">+0.46%</td>
+                            </tr>
+                            <tr>
+                                <td headers="fruit_name" style="font-weight:bold;"><input type="button" id="0"
+                                        name="mybutton" value="NYSE"
+                                        style="font-size: 20px; box-shadow: none; color: #ffffff;font-family: 'Ranchers';"></td>
+                                <td headers="fruit_price" style="font-size: 20px;">12749.79</td>
+                                <td headers="fruit_price" style="font-size: 20px; color: green;">+0.46%</td>
+                            </tr>
+                            
                         </tbody>
                     </table>
                 </center>
@@ -667,10 +670,10 @@
         function doindicechart(){
           getdata2("DOW30", "indice1");
           getdata2("S&P", "indice2");
-          getdata2("NASDAQ", "indice3");
-          getdata2("RUSSEL2000", "indice4");
-          getdata2("NYSE", "indice5");
-          getdata2("SOX", "indice6");
+          getdata2("RUSSEL2000", "indice3");
+          getdata2("SOX", "indice4");
+          getdata2("NASDAQ", "indice5");
+          getdata2("NYSE", "indice6");
         }
         function getdata2(tmp, chart) {
             filename = "csv/" + tmp + ".csv";
