@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Win The Jackpot </title>
+    <!--改籤頁的標題 -->
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://jean870809.github.io/ruby/index.html">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="">
+
+    <link rel="canonical" href="">
+    <link rel="stylesheet" href="dawho1.css">
+    <link rel="stylesheet" href="../dawho2.css">
+    <link rel="stylesheet" href="style_chart.css">
+    <link href="../font/googlefont.css" rel="stylesheet">
+
+    <script src="d3.js"></script>
+    <script src="Chart.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="assets/js/init_chart.js"></script>
+    <script src="assets/js/drawChart.js"></script>
+    <script src="assets/js/QTS.js"></script>
+
+
+
+</head>
+
+<body class="f_HanSans_light">
+    <div id="menu">
+        <div class="container">
+            <header class="head">
+                <input id="control_menu" type="checkbox" name="checkbox">
+                <div class="menu font_Gen_bold">
+                    <a class="logo_a" href="../index.html"><img class="logo" src="image1.png"></a>
+                    <a class="btn_label">
+                        <label class="label_block" for="control_menu"></label></a>
+                        <nav class="nav" style="font-family: 'Ranchers';">
+                            <a class="menu_item" href="../index.html">Home</a>
+                            <a class="menu_item" href="../market&mf&news/market.html">Market</a>
+                            <a class="menu_item" href="../market&mf&news/myfavorite.html">MyFavorite</a>
+                            <a class="menu_item" href="./qts.html">Recommendation</a>
+                            <a></a>
+                            <a class="menu_item" href="../market&mf&news/news.html">News</a>
+                            <a class="menu_item" href="../gamecard/ruby_card.html">Game</a>
+                            <a class="btn_gold shadow menu_btn_gold" href="../login.html" id="name">Login</a>
+                        </nav>
+                    </div>
+
+            </header>
+        </div>
+    </div>
+
+
+
+    <!-- Main -->
+    <div id="main">
+        <section id="innner" class="style2">
+            <div id="root">
+                <input type="button" class="button" value="PORTFOLIO" name="button" onclick="selectButton(this)"
+                    id="portfolioButton">
+                <input type="button" class="button" value="FUND" name="button" onclick="selectButton(this)"
+                    id="fundButton">
+                <input type="button" class="button" value="TREND & DAILY RISK" name="button"
+                    onclick="selectButton(this)" id="trendButton">
+                <input type="button" class="button" value="COMPARE" style="display:none;" name="button"
+                    onclick="selectButton(this)" id="compareButton">
+            </div>
+        </section>
+        <section id="two" class="spotlights">
+            <div class="inner" id="div">
+                <div id="myDiv"></div>
+                <div id="myDiv2"></div>
+                <div>
+                    <form>
+                        <div class="fields">
+                            <div class="field quarter">
+                                <label>最佳趨勢值</label>
+                                <input name="myData" type="text" value="" disabled>
+                            </div>
+                            <div class="field quarter">
+                                <label>最佳風險</label>
+                                <input name="myData" type="text" value="" disabled>
+                            </div>
+                            <div class="field quarter" name="show_data" style="display: none;">
+                                <label style='color: orange;'>你的趨勢值</label>
+                                <input name="myData" type="text" value="" disabled>
+                            </div>
+                            <div class="field quarter" name="show_data" style="display: none;">
+                                <label style='color: orange;'>你的風險</label>
+                                <input name="myData" type="text" value="" disabled>
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <a id="download" download="ChartImage" href="" class="" title="" width="50px" height="50px">
+
+                            <!-- Download Icon -->
+                            <img src="img/download.png" id="download_img" style="float: right; display: none"
+                                width="50px" height="50px"></i>
+                        </a>
+                        <canvas id="canvas" style="width: 100%;"></canvas>
+                        <br>
+                        <a id="download2" download="ChartImage2" href="" class="" title="" width="50px" height="50px">
+
+                            <!-- Download Icon -->
+                            <img src="img/download.png" id="download_img2" style="float: right; display: none"
+                                width="50px" height="50px"></i>
+                        </a>
+                        <canvas id="canvas2" style="width: 90%;"></canvas>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="../dawho4.js"></script>
+    <script src="../dawho6.js"></script>
+    <!-- <script src="../dawho7.js"></script> -->
+    <script src="../dawho8.js"></script>
+
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript"
+        src="jquery.cookie.min.js"></script>
+    <script>
+        var name = $.cookie('googlename')
+        console.log(name);
+        if (name != 'undefined') {
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('name').setAttribute("href", "javascript: void(0)");
+        }
+    </script>
+
+</body>
+
+</html>
