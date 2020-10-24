@@ -532,7 +532,7 @@ function selectButton(e) {
             dataset = [];
             dataset.push({
                 type: "line",
-                label: "Daily risk line",
+                label: "Daily Risk",
                 backgroundColor: "#FF0000",
                 borderColor: "#FF0000",
                 lineTension: 0,
@@ -547,11 +547,11 @@ function selectButton(e) {
             var bar_label = [];
             var bar_color = [];
             var bar_data = [];
-            bar_label.push(exp_best_answer.company_name);
+
             bar_color.push("#FF0000");
             bar_data.push(exp_best_answer.daily_risk);
             for (var j = 0; j < stock_copy2.length; j++) {
-                bar_label.push(stock_copy2[j].company_name);
+
                 bar_color.push(company_color[stock_copy2[j].company_name]);
                 bar_data.push(stock_copy2[j].daily_risk);
             }
