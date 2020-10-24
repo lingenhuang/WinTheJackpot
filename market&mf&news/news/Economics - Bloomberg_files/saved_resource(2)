@@ -1,0 +1,19 @@
+window.Adform.Tracking.TrackingPointId = 50648018;
+window.Adform.Tracking.TrackingPointName = "bloomberg.com/markets/economics";
+try{
+(function() {
+    if (location.href.match("subscribe.businessweek.com/pubs/BW/BWK/RL_US_FreeTrial_conf.jsp")) {
+        adf.track(1118168, "Subscription complete")
+    }
+})();
+(function() {
+    if ((location.hostname + location.pathname).match(/www\.businessweekmag\.com\/preview(?:\/\d{4}\/\d{2}\/\d{2}\/|\/$|$)/)) {
+        adf.track(1118168, "Preview LP");
+    }
+})();
+(function() {
+    if (location.href.match("subscribe.businessweek.com/pubs/BW/BWK/RL_US_one_panel_FreeTrial.jsp")) {
+        adf.track(1118168, "Free Trial form")
+    }
+})();
+}catch(e){}

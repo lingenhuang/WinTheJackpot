@@ -1,0 +1,300 @@
+.background-split-vertical {
+  background: linear-gradient(0deg, #162b48 50%, #23a5dd 50%);
+}
+.background-split-vertical-reverse {
+  background: linear-gradient(0deg, #23a5dd 50%, #162b48 50%);
+}
+.absolute-position {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.graphic-element {
+  display: block;
+  color: transparent;
+  background-repeat: no-repeat;
+  font-size: 0;
+  background-size: 100% 100%;
+  object-fit: fill;
+}
+@keyframes wipe-right-to-nothing-animation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes birds-animation {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    transform: scaleX(1.2) scaleY(0.7);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes smoke-animation {
+  0% {
+    transform: rotateZ(-5deg) translateY(0);
+  }
+  50% {
+    transform: rotateZ(5deg) translateY(-3px);
+  }
+  100% {
+    transform: rotateZ(-5deg) translateY(0);
+  }
+}
+@keyframes smoke-below-animation {
+  0% {
+    transform: rotateZ(5deg) translateY(0);
+  }
+  50% {
+    transform: rotateZ(-5deg) translateY(3px);
+  }
+  100% {
+    transform: rotateZ(5deg) translateY(0);
+  }
+}
+@keyframes size-specific-animation {
+  
+}
+
+
+
+
+
+
+
+
+
+@keyframes city-timeline-pan-300x250 {
+  0% {
+    left: -72px;
+  }
+  58% {
+    left: -1px;
+  }
+  100% {
+    left: -1px;
+  }
+}
+@keyframes city-timeline-text1-position-300x250 {
+  
+  0% {
+    bottom: 47px;
+    top: auto;
+  }
+  31% {
+    
+    bottom: 47px;
+    top: auto;
+  }
+  32% {
+    
+    bottom: auto;
+    top: 160px;
+  }
+  90% {
+    bottom: 47px;
+    top: auto;
+  }
+  100% {
+    bottom: 47px;
+    top: auto;
+  }
+}
+@keyframes bigWaves-animation-300x250 {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  50% {
+    transform: translateX(68px) translateY(0px);
+  }
+  100% {
+    transform: translateX(136px) translateY(0px);
+  }
+}
+
+.size-300x250 {
+  width: 300px;
+  height: 250px;
+}
+.size-300x250.campaign-Cityscape .line-1 .svg-text {
+  height: 43px;
+  width: 215px;
+}
+.size-300x250.campaign-Cityscape .line-3 .svg-text {
+  height: 44px;
+  width: 207.99988px;
+}
+.size-300x250.campaign-Cityscape .line-1 {
+  margin-top: -2px;
+}
+.size-300x250.campaign-Cityscape .headline {
+  top: 0;
+  left: 0;
+}
+.size-300x250.campaign-Cityscape .headline .slide-1 {
+  top: auto;
+  bottom: 47px;
+  left: 27px;
+  animation-name: city-timeline-text1-position-300x250 !important;
+}
+.size-300x250.campaign-Cityscape .headline .slide-2 {
+  top: 42px;
+  left: 25px;
+}
+.size-300x250.campaign-Boat .line-1 .svg-text {
+  margin-top: 2px;
+  height: 35px;
+  width: 175px;
+}
+.size-300x250.campaign-Boat .line-3 .svg-text {
+  height: 44px;
+  width: 157.924316px;
+}
+.size-300x250.campaign-Boat .line-5 .svg-text {
+  margin-top: 1px;
+  height: 22px;
+  width: 140.419752px;
+}
+.size-300x250.campaign-Boat .line-1 {
+  padding: 2px 0 5px 0;
+}
+.size-300x250 .headline {
+  top: 14px;
+  left: 16px;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  line-height: 22px;
+}
+.size-300x250 .logo {
+  height: 32.7352297851px;
+  width: 220px;
+  top: 108px;
+  left: 40px;
+}
+.size-300x250 .cta {
+  height: 62.37px;
+  width: 110px;
+  top: 154px;
+  left: 95px;
+}
+.size-300x250 .stormcloud {
+  height: 50px;
+  width: 48px;
+  top: 70px;
+  left: 48px;
+}
+.size-300x250 .cloud {
+  height: 27.8019918969px;
+  width: 48px;
+  top: 0;
+  left: 0;
+}
+.size-300x250 .lightning {
+  height: 24px;
+  width: 16.1860465128px;
+  top: 24px;
+  left: auto;
+  right: 3px;
+}
+.size-300x250 .boat {
+  height: 177.9007633696px;
+  width: 118px;
+  top: 80px;
+  left: 90px;
+}
+.size-300x250 .anchor {
+  height: 36.2500000003px;
+  width: 27px;
+  top: 77px;
+  left: auto;
+  right: 25px;
+}
+.size-300x250 .bigWaves {
+  height: 176.3039014377px;
+  width: 1641.3664028781px;
+  top: 130px;
+  left: -235px;
+  z-index: 10;
+  animation-name: bigWaves-animation-300x250 !important;
+}
+.size-300x250 .sun {
+  height: 53.9223799446px;
+  width: 53.9223799446px;
+  top: 70px;
+  left: 205px;
+}
+.size-300x250 .smallWaves {
+  height: 73.193181832px;
+  width: 960.7954547254px;
+  top: 213px;
+  left: -235px;
+  z-index: 22;
+}
+.size-300x250 .city {
+  height: 127px;
+  width: 369.805471081px;
+  top: -2px;
+  left: -72px;
+  background-position-y: 1px;
+  animation-name: city-timeline-pan-300x250 !important;
+}
+.size-300x250 .city.city-below {
+  top: auto;
+  bottom: -5px;
+  background-position-y: -1px;
+}
+.size-300x250 .birds {
+  height: 24px;
+  width: 38px;
+  top: 38px;
+  left: auto;
+  right: 95px;
+}
+.size-300x250 .city-below .birds {
+  top: 61px;
+}
+.size-300x250 .city-below .birds .bird {
+  transform-origin: 50% 10%;
+}
+.size-300x250 .bird {
+  height: 10px;
+  width: 14px;
+  top: 14px;
+  left: 12px;
+  z-index: 25;
+  transform-origin: 50% 90%;
+}
+.size-300x250 .bird.bird-2 {
+  top: 3px;
+  left: 0px;
+}
+.size-300x250 .bird.bird-3 {
+  top: 3px;
+  left: 24px;
+}
+.size-300x250 .smoke {
+  height: 20px;
+  width: 7.1844px;
+  top: 62px;
+  left: 4px;
+}
+.size-300x250 .city-below .smoke {
+  top: 46px;
+}
+.size-300x250 .smoke-2 {
+  left: 18px;
+}
