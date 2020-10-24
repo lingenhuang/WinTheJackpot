@@ -135,7 +135,7 @@ $(document).ready(function () {
     },
         {
             question: "5. Which one is MicroSoft(MSFT)?",
-            answers: ["MSFT", "KO", "MCD", "MMM"],
+            answers: ["MMM", "KO", "MCD", "MSFT"],
             correctAnswer: "MSFT"
     }
   ];
