@@ -244,7 +244,7 @@ $(document).ready(function(){
   clearHighlightsAndFeedback = function() {
     answerDiv.removeClass('questions-page--correct');
     answerDiv.removeClass('questions-page--incorrect');
-    answerDiv.removeClass('questions-page--choose');
+     answerDiv.removeClass('questions-page--choose'); 
     feedbackDiv.removeClass('ion-checkmark-round');
     feedbackDiv.removeClass('ion-close-round');
   };
