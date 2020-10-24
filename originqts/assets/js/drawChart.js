@@ -2,7 +2,7 @@
 
 var company_color = {
     AAPL: "#4F4F4F",
-    NFLX: "#000000", 
+    NFLX: "#000000",
     FB: "#005AB5",
     TSLA: "#CE0000",
     COST: "#FF7575",
@@ -44,17 +44,17 @@ function newDate(days) {
 function newDateString(days) {
     return moment().add(days, 'd').format(timeFormat);
 }
-        
-function selectButton(e){
+
+function selectButton(e) {
     // myDiv.innerHTML = "";
     document.getElementById("download_img").style = "float: right;";
     document.getElementById("download_img2").style = "display: none;";
-    if(mode == "game"){
-        for(var j = 0; j < myButton.length ; j++){
+    if (mode == "game") {
+        for (var j = 0; j < myButton.length; j++) {
             myButton[j].setAttribute("style", "");
         }
-    }else{
-        for(var j = 0; j < myButton.length-1 ; j++){
+    } else {
+        for (var j = 0; j < myButton.length - 1; j++) {
             myButton[j].setAttribute("style", "");
         }
     }
@@ -79,13 +79,13 @@ function selectButton(e){
     myChart2.destroy();
 
     var best_name = "";
-    for(var j = 0; j < exp_best_answer.counter; j++){
+    for (var j = 0; j < exp_best_answer.counter; j++) {
         best_name += company_name[exp_best_answer.locate[j]];
         best_name += ", ";
     }
-    
+
     var day_label = [];
-    for(var j = 0; j < DAYNUMBER; j++){
+    for (var j = 0; j < DAYNUMBER; j++) {
         //day_label.push("day "+(j+1));
         day_label = stock_date;
     }
@@ -94,14 +94,14 @@ function selectButton(e){
 
     var dataset = [];
 
-    switch(e.value){
+    switch (e.value) {
         case "PORTFOLIO":
             document.getElementById("download_img2").style = "float: right;";
             myCanvas2.setAttribute("style", "background-color:white;")
             exp_best_answer.chart_totalMoney = [];
             exp_best_answer.chart_y_line = [];
 
-            for(var j = 0 ; j < DAYNUMBER; j++){
+            for (var j = 0; j < DAYNUMBER; j++) {
                 exp_best_answer.chart_totalMoney.push({
                     x: newDateString(j - DAYNUMBER),
                     y: exp_best_answer.totalMoney[j]
@@ -113,65 +113,65 @@ function selectButton(e){
 
             }
 
-            for(var j = 0; j < exp_best_answer.counter; j++){
+            for (var j = 0; j < exp_best_answer.counter; j++) {
                 exp_best_answer.chart_fs[j] = [];
-                for(var k = 0; k < DAYNUMBER; k++){
+                for (var k = 0; k < DAYNUMBER; k++) {
                     exp_best_answer.chart_fs[j].push({
                         x: newDateString(k - DAYNUMBER),
                         y: exp_best_answer.fs[j][k]
                     });
                 }
             }
-            var myImage = new Image(point_size,point_size);
+            var myImage = new Image(point_size, point_size);
             myImage.src = "img/best.png";
             color = getRandomColor();
             dataset.push({
-                    label : "best : " + exp_best_answer.company_name,
-                    lineTension : 0.4,
-                    backgroundColor : "#FFD9EC",
-                    borderColor : "#FF0000",
-                    borderWidth : 3,
-                    data: exp_best_answer.chart_totalMoney,
-                    fill : "1",
-                    yAxisID: 'y-axis-2',
-                    pointStyle: myImage,
-                });
-            dataset.push({
-                label : "trend",
-                    lineTension : 0,
-                    backgroundColor : "#000000",
-                    borderColor : "#000000",
-                    borderWidth : 1,
-                    data: exp_best_answer.chart_y_line,
-                    fill : false,
-                    pointRadius : 0,
-                    yAxisID: 'y-axis-2',
+                label: "best : " + exp_best_answer.company_name,
+                lineTension: 0.4,
+                backgroundColor: "#FFD9EC",
+                borderColor: "#FF0000",
+                borderWidth: 3,
+                data: exp_best_answer.chart_totalMoney,
+                fill: "1",
+                yAxisID: 'y-axis-2',
+                pointStyle: myImage,
             });
-            for(var j = 0; j < exp_best_answer.counter; j++){
+            dataset.push({
+                label: "trend",
+                lineTension: 0,
+                backgroundColor: "#000000",
+                borderColor: "#000000",
+                borderWidth: 1,
+                data: exp_best_answer.chart_y_line,
+                fill: false,
+                pointRadius: 0,
+                yAxisID: 'y-axis-2',
+            });
+            for (var j = 0; j < exp_best_answer.counter; j++) {
                 var myIcon = [];
-                var myImage = new Image(point_size,point_size);
+                var myImage = new Image(point_size, point_size);
                 myImage.src = "img/" + company_name[exp_best_answer.locate[j]] + ".png";
                 color = getRandomColor();
                 dataset.push({
-                    label : company_name[exp_best_answer.locate[j]],
+                    label: company_name[exp_best_answer.locate[j]],
                     borderDash: [5, 5],
-                    lineTension : 0,
-                    backgroundColor : company_color[company_name[exp_best_answer.locate[j]]],
-                    borderColor : company_color[company_name[exp_best_answer.locate[j]]],
-                    borderWidth : 1,
+                    lineTension: 0,
+                    backgroundColor: company_color[company_name[exp_best_answer.locate[j]]],
+                    borderColor: company_color[company_name[exp_best_answer.locate[j]]],
+                    borderWidth: 1,
                     data: exp_best_answer.chart_fs[j],
-                    fill : false,
+                    fill: false,
                     pointRadius: 1,
                     yAxisID: 'y-axis-1',
                     pointStyle: myImage,
                 });
-            } 
+            }
 
             var bestLineChartData = {
                 labels: day_label,
                 datasets: dataset,
             }
-            myChart = new Chart(ctx2,{
+            myChart = new Chart(ctx2, {
                 type: 'line',
                 data: bestLineChartData,
                 legend: {
@@ -181,10 +181,10 @@ function selectButton(e){
                 },
                 options: {
                     responsive: true,
-                    legend:{
+                    legend: {
                         display: true,
-                        labels:{
-                            usePointStyle : true,
+                        labels: {
+                            usePointStyle: true,
                         },
                     },
                     tooltips: {
@@ -214,12 +214,12 @@ function selectButton(e){
                                 labelString: 'Stock',
                             },
                             ticks: {
-                                min: parseInt(exp_best_answer.dMoney) ,
+                                min: parseInt(exp_best_answer.dMoney),
                                 max: exp_best_answer.dMoney * 1.5,
                             },
-                            
+
                         }, {
-                            type: 'linear', 
+                            type: 'linear',
                             display: true,
                             position: 'right',
                             id: 'y-axis-2',
@@ -243,32 +243,32 @@ function selectButton(e){
 
             dataset = [];
 
-            for(var j = 0; j < exp_best_answer.counter; j++){
+            for (var j = 0; j < exp_best_answer.counter; j++) {
                 var myIcon = [];
-                var myImage = new Image(point_size,point_size);
+                var myImage = new Image(point_size, point_size);
                 myImage.src = "img/" + company_name[exp_best_answer.locate[j]] + ".png";
-                
+
                 color = getRandomColor();
                 dataset.push({
-                    label : company_name[exp_best_answer.locate[j]],
+                    label: company_name[exp_best_answer.locate[j]],
                     borderDash: [5, 5],
-                    lineTension : 0,
-                    backgroundColor : company_color[company_name[exp_best_answer.locate[j]]],
-                    borderColor : company_color[company_name[exp_best_answer.locate[j]]],
-                    borderWidth : 1,
+                    lineTension: 0,
+                    backgroundColor: company_color[company_name[exp_best_answer.locate[j]]],
+                    borderColor: company_color[company_name[exp_best_answer.locate[j]]],
+                    borderWidth: 1,
                     data: exp_best_answer.chart_fs[j],
-                    fill : false,
+                    fill: false,
                     pointRadius: 1,
                     pointStyle: myImage,
                 });
-            } 
+            }
 
-            
+
             var bestLineChartData = {
                 labels: day_label,
                 datasets: dataset,
             }
-            myChart2 = new Chart(ctx,{
+            myChart2 = new Chart(ctx, {
                 type: 'line',
                 data: bestLineChartData,
                 legend: {
@@ -278,10 +278,10 @@ function selectButton(e){
                 },
                 options: {
                     responsive: true,
-                    legend:{
+                    legend: {
                         display: true,
-                        labels:{
-                            usePointStyle : true,
+                        labels: {
+                            usePointStyle: true,
                         },
                     },
                     tooltips: {
@@ -324,8 +324,8 @@ function selectButton(e){
                                 display: true,
                                 labelString: 'Stock',
                             },
-                            
-                            
+
+
                         }
                     },
 
@@ -333,73 +333,73 @@ function selectButton(e){
             });
             break;
         case "FUND":
-            
+
             dataset.push({
-                label : "趨勢線",
-                    lineTension : 0,
-                    backgroundColor : "#000000",
-                    borderColor : "#000000",
-                    borderWidth : 1,
-                    data: exp_best_answer.y_line,
-                    fill : false,
-                    yAxisID: 'y-axis-1',
+                label: "趨勢線",
+                lineTension: 0,
+                backgroundColor: "#000000",
+                borderColor: "#000000",
+                borderWidth: 1,
+                data: exp_best_answer.y_line,
+                fill: false,
+                yAxisID: 'y-axis-1',
             });
 
             dataset.push({
-                label : "best : " + exp_best_answer.company_name,
-                    backgroundColor : "#FFD9EC",
-                    borderColor : "#FF0000",
-                    borderWidth : 3,
-                    data: exp_best_answer.totalMoney,
-                    fill : "-1",
-                    yAxisID: 'y-axis-1',
+                label: "best : " + exp_best_answer.company_name,
+                backgroundColor: "#FFD9EC",
+                borderColor: "#FF0000",
+                borderWidth: 3,
+                data: exp_best_answer.totalMoney,
+                fill: "-1",
+                yAxisID: 'y-axis-1',
             });
-            
-            for(var j = 0; j < COMPANYNUMBER; j++){
+
+            for (var j = 0; j < COMPANYNUMBER; j++) {
                 color = getRandomColor();
                 dataset.push({
-                    label : stock[j].company_name,
+                    label: stock[j].company_name,
                     borderDash: [5, 5],
-                    lineTension : 0,
-                    backgroundColor : company_color[stock[j].company_name],
-                    borderColor : company_color[stock[j].company_name],
-                    borderWidth : 1,
+                    lineTension: 0,
+                    backgroundColor: company_color[stock[j].company_name],
+                    borderColor: company_color[stock[j].company_name],
+                    borderWidth: 1,
                     data: stock[j].totalMoney,
-                    fill : false,
+                    fill: false,
                     pointRadius: 1,
                     yAxisID: 'y-axis-1',
                 });
-            } 
+            }
 
             var lineChartData = {
                 labels: day_label,
                 datasets: dataset,
             }
 
-            myChart = new Chart(ctx,{
+            myChart = new Chart(ctx, {
                 type: 'line',
-                    data: lineChartData,
-                    options: {
-                        responsive: true,
-                        legend:{
+                data: lineChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: true,
+                    },
+                    tooltips: {
+                        enabled: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true
+                        }],
+                        yAxes: [{
+                            type: 'linear',
                             display: true,
+                            position: 'left',
+                            id: 'y-axis-1',
                         },
-                        tooltips: {
-                            enabled: true
-                        },
-                        scales: {
-                            xAxes: [{
-                                display: true
-                            }],
-                            yAxes: [{
-                                type: 'linear',
-                                display: true,
-                                position: 'left',
-                                id: 'y-axis-1',
-                            }, 
-                            ]
-                        },
-                    }
+                        ]
+                    },
+                }
             });
 
             break;
@@ -409,48 +409,48 @@ function selectButton(e){
             myCanvas2.setAttribute("style", "background-color:white; background-image: url(img/RISK.png); background-size: cover;")
             var temp = stock.slice(0);
             stock_copy = quickSort(temp);
-            
+
             stock_copy.reverse();
             var neg_stock = [];
-            for(var j = 0; j < COMPANYNUMBER; j++){
-                if(stock_copy[stock_copy.length - 1].trend < 0){
+            for (var j = 0; j < COMPANYNUMBER; j++) {
+                if (stock_copy[stock_copy.length - 1].trend < 0) {
                     neg_stock.push(stock_copy.pop());
                 }
             }
             neg_stock.reverse();
 
             dataset.push({
-                label : "best : " + exp_best_answer.company_name,
-                backgroundColor : "#FF0000",
-                borderColor : "#FF0000",
-                borderWidth : 1,
+                label: "best : " + exp_best_answer.company_name,
+                backgroundColor: "#FF0000",
+                borderColor: "#FF0000",
+                borderWidth: 1,
                 data: [exp_best_answer.trend],
                 yAxisID: 'y-axis-1',
             });
 
-            for(var j = 0; j < stock_copy.length; j++){
+            for (var j = 0; j < stock_copy.length; j++) {
                 color = getRandomColor();
                 dataset.push({
-                    label : stock_copy[j].company_name,
-                    backgroundColor : company_color[stock_copy[j].company_name],
-                    borderColor : company_color[stock_copy[j].company_name],
-                    borderWidth : 1,
+                    label: stock_copy[j].company_name,
+                    backgroundColor: company_color[stock_copy[j].company_name],
+                    borderColor: company_color[stock_copy[j].company_name],
+                    borderWidth: 1,
                     data: [stock_copy[j].trend],
                     yAxisID: 'y-axis-1',
                 });
-            } 
+            }
 
-            for(var j = 0; j < neg_stock.length; j++){
+            for (var j = 0; j < neg_stock.length; j++) {
                 color = getRandomColor();
                 dataset.push({
-                    label : neg_stock[j].company_name,
-                    backgroundColor : company_color[neg_stock[j].company_name],
-                    borderColor : company_color[neg_stock[j].company_name],
-                    borderWidth : 1,
+                    label: neg_stock[j].company_name,
+                    backgroundColor: company_color[neg_stock[j].company_name],
+                    borderColor: company_color[neg_stock[j].company_name],
+                    borderWidth: 1,
                     data: [neg_stock[j].trend],
                     yAxisID: 'y-axis-2',
                 });
-            } 
+            }
 
 
             var barChartData = {
@@ -460,12 +460,12 @@ function selectButton(e){
 
             var bar_max = exp_best_answer.trend * 1.3;
             var bar_min = -1 * bar_max;
-            if(neg_stock.length != 0){
+            if (neg_stock.length != 0) {
                 var neg_bar_min = Math.round(neg_stock[neg_stock.length - 1].trend * 1.3 / 1000000) * 1000000;
                 var neg_bar_max = -1 * neg_bar_min;
             }
 
-            myChart = new Chart(ctx,{
+            myChart = new Chart(ctx, {
                 type: 'bar',
                 data: barChartData,
                 options: {
@@ -474,236 +474,236 @@ function selectButton(e){
                         position: 'top',
                     },
                     scales: {
-                            xAxes: [{
-                                display: true
-                            }],
-                            yAxes: [{
-                                type: 'linear',
+                        xAxes: [{
+                            display: true
+                        }],
+                        yAxes: [{
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            ticks: {
+                                min: bar_min,
+                                max: bar_max,
+                            },
+                            scaleLabel: {
                                 display: true,
-                                position: 'left',
-                                ticks: {
-                                    min: bar_min,
-                                    max: bar_max,
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Positive Stock',
-                                },
-                                id: 'y-axis-1',
-                            }, {
-                                type: 'linear', 
+                                labelString: 'Positive Stock',
+                            },
+                            id: 'y-axis-1',
+                        }, {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            ticks: {
+                                min: neg_bar_min,
+                                max: neg_bar_max,
+                            },
+                            scaleLabel: {
                                 display: true,
-                                position: 'right',
-                                ticks: {
-                                    min: neg_bar_min,
-                                    max: neg_bar_max,
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Negative Stock',
-                                },
-                                id: 'y-axis-2',
-                                // grid line settings
-                                gridLines: {
-                                    drawOnChartArea: false, // only want the grid lines for one axis to show up
-                                },
-                            }]
-                        },
+                                labelString: 'Negative Stock',
+                            },
+                            id: 'y-axis-2',
+                            // grid line settings
+                            gridLines: {
+                                drawOnChartArea: false, // only want the grid lines for one axis to show up
+                            },
+                        }]
+                    },
 
-                    }
-                });
-                
-                var stock_copy2 = quickSort2(stock);
-                
-                // stock_copy2.reverse();
-                var risk_list = [];
-                var risk_label = [];
-                var img_list = [];
-                risk_list.push(exp_best_answer.daily_risk);
-                var temp_img = new Image(point_size,point_size);
-                temp_img.src = "img/best.png";
+                }
+            });
+
+            var stock_copy2 = quickSort2(stock);
+
+            // stock_copy2.reverse();
+            var risk_list = [];
+            var risk_label = [];
+            var img_list = [];
+            risk_list.push(exp_best_answer.daily_risk);
+            var temp_img = new Image(point_size, point_size);
+            temp_img.src = "img/best.png";
+            img_list.push(temp_img);
+            for (var j = 0; j < stock_copy2.length; j++) {
+                risk_list.push(stock_copy2[j].daily_risk);
+                var temp_img = new Image(point_size, point_size);
+                temp_img.src = "img/" + stock_copy2[j].company_name + ".png";
                 img_list.push(temp_img);
-                for(var j = 0; j < stock_copy2.length; j++){
-                    risk_list.push(stock_copy2[j].daily_risk);
-                    var temp_img = new Image(point_size, point_size);
-                    temp_img.src = "img/" + stock_copy2[j].company_name + ".png";
-                    img_list.push(temp_img);
-                }
-                dataset = [];
-                dataset.push({
-                    type: "line",
-                    label : "Daily risk line",
-                    backgroundColor : "#FF0000",
-                    borderColor : "#FF0000",
-                    lineTension : 0,
-                    borderWidth : 1,
-                    data: risk_list,
-                    fill: false,
-                    pointRadius: 10,
-                    pointStyle: img_list,
-                });
+            }
+            dataset = [];
+            dataset.push({
+                type: "line",
+                label: "Daily risk line",
+                backgroundColor: "#FF0000",
+                borderColor: "#FF0000",
+                lineTension: 0,
+                borderWidth: 1,
+                data: risk_list,
+                fill: false,
+                pointRadius: 10,
+                pointStyle: img_list,
+            });
 
 
-                var bar_label = [];
-                var bar_color = [];
-                var bar_data = [];
-                bar_label.push(exp_best_answer.company_name);
-                bar_color.push("#FF0000");
-                bar_data.push(exp_best_answer.daily_risk);
-                for(var j = 0; j < stock_copy2.length; j++){
-                    bar_label.push(stock_copy2[j].company_name);
-                    bar_color.push(company_color[stock_copy2[j].company_name]);
-                    bar_data.push(stock_copy2[j].daily_risk);
-                }
+            var bar_label = [];
+            var bar_color = [];
+            var bar_data = [];
+            bar_label.push(exp_best_answer.company_name);
+            bar_color.push("#FF0000");
+            bar_data.push(exp_best_answer.daily_risk);
+            for (var j = 0; j < stock_copy2.length; j++) {
+                bar_label.push(stock_copy2[j].company_name);
+                bar_color.push(company_color[stock_copy2[j].company_name]);
+                bar_data.push(stock_copy2[j].daily_risk);
+            }
 
-                dataset.push({
-                    type: "bar",
-                    label : bar_label,
-                    backgroundColor : bar_color,
-                    borderColor : bar_color,
-                    borderWidth : 1,
-                    data: bar_data,
-                    // fill: false,
-                });
-                
-                risk_label.push("best");
-                for(var j = 0; j < stock_copy2.length; j++){
-                    risk_label.push(stock_copy2[j].company_name);
-                }
+            dataset.push({
+                type: "bar",
+                label: bar_label,
+                backgroundColor: bar_color,
+                borderColor: bar_color,
+                borderWidth: 1,
+                data: bar_data,
+                // fill: false,
+            });
 
-                var barChartData = {
-                    labels: risk_label,
-                    datasets: dataset,
-                };
+            risk_label.push("best");
+            for (var j = 0; j < stock_copy2.length; j++) {
+                risk_label.push(stock_copy2[j].company_name);
+            }
+
+            var barChartData = {
+                labels: risk_label,
+                datasets: dataset,
+            };
 
 
-    
-                myChart2 = new Chart(ctx2,{
-                    type: 'bar',
-                    data: barChartData,
-                    options: {
-                        responsive: true,
-                        legend: {
-                            // position: 'top',
-                            display: false,
-                        },
-                        // scales: {
-                        //         xAxes: [{
-                        //             display: true
-                        //         }],
-                        //         yAxes: {
-                        //             type: 'linear',
-                        //             display: true,
-                        //             position: 'left',                                    
-                        //         }
-                        //     },
-                        
-                        // scales: {
-                        //     xAxes: [{
-                        //         display: false
-                                
-                        //     }],
-                        //     yAxes: [{
-                        //         // type: 'linear',
-                        //         display: false,
-                        //         position: 'left',
-                        //         id: 'y-axis-1',
-                        //     }, 
-                        //     ]
-                        // },
-                        
-                        },
-                        
-                    }
-                    );
+
+            myChart2 = new Chart(ctx2, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        // position: 'top',
+                        display: false,
+                    },
+                    // scales: {
+                    //         xAxes: [{
+                    //             display: true
+                    //         }],
+                    //         yAxes: {
+                    //             type: 'linear',
+                    //             display: true,
+                    //             position: 'left',                                    
+                    //         }
+                    //     },
+
+                    // scales: {
+                    //     xAxes: [{
+                    //         display: false
+
+                    //     }],
+                    //     yAxes: [{
+                    //         // type: 'linear',
+                    //         display: false,
+                    //         position: 'left',
+                    //         id: 'y-axis-1',
+                    //     }, 
+                    //     ]
+                    // },
+
+                },
+
+            }
+            );
 
 
             break;
 
-            case "COMPARE":
+        case "COMPARE":
             show_data[0].style = "";
             show_data[1].style = "";
 
             dataset.push({
-                label : "best 趨勢線",
-                    backgroundColor : "#000000",
-                    borderColor : "#000000",
-                    borderWidth : 1,
-                    data: exp_best_answer.y_line,
-                    pointRadius : 0,
-                    fill : false,
-                    yAxisID: 'y-axis-1',
+                label: "best 趨勢線",
+                backgroundColor: "#000000",
+                borderColor: "#000000",
+                borderWidth: 1,
+                data: exp_best_answer.y_line,
+                pointRadius: 0,
+                fill: false,
+                yAxisID: 'y-axis-1',
             });
             dataset.push({
-                label : "best : " + exp_best_answer.company_name,
-                    backgroundColor : "#FFD9EC",
-                    borderColor : "#FF0000",
-                    borderWidth : 3,
-                    data: exp_best_answer.totalMoney,
-                    fill : "-1",
-                    yAxisID: 'y-axis-1',
+                label: "best : " + exp_best_answer.company_name,
+                backgroundColor: "#FFD9EC",
+                borderColor: "#FF0000",
+                borderWidth: 3,
+                data: exp_best_answer.totalMoney,
+                fill: "-1",
+                yAxisID: 'y-axis-1',
             });
 
-            
-            dataset.push({
-                label : "你的趨勢線",
-                    backgroundColor : "#0072E3",
-                    borderColor : "#0072E3",
-                    borderWidth : 1,
-                    data: game_stock[0].y_line,
-                    pointRadius : 0,
-                    fill : false,
-                    yAxisID: 'y-axis-1',
-            });
 
             dataset.push({
-                label : "你的答案",
-                    backgroundColor : "#79FF79",
-                    borderColor : "#00BB00",
-                    borderWidth : 3,
-                    data: game_stock[0].totalMoney,
-                    fill : "-1",
-                    yAxisID: 'y-axis-1',
+                label: "你的趨勢線",
+                backgroundColor: "#0072E3",
+                borderColor: "#0072E3",
+                borderWidth: 1,
+                data: game_stock[0].y_line,
+                pointRadius: 0,
+                fill: false,
+                yAxisID: 'y-axis-1',
             });
 
-        
+            dataset.push({
+                label: "你的答案",
+                backgroundColor: "#79FF79",
+                borderColor: "#00BB00",
+                borderWidth: 3,
+                data: game_stock[0].totalMoney,
+                fill: "-1",
+                yAxisID: 'y-axis-1',
+            });
 
-            
 
-            
+
+
+
+
 
             var lineChartData = {
                 labels: day_label,
                 datasets: dataset,
             }
 
-            myChart = new Chart(ctx,{
+            myChart = new Chart(ctx, {
                 type: 'line',
-                    data: lineChartData,
-                    options: {
-                        responsive: true,
-                        legend:{
+                data: lineChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: true,
+                    },
+                    tooltips: {
+                        enabled: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true
+                        }],
+                        yAxes: [{
+                            type: 'linear',
                             display: true,
+                            position: 'left',
+                            id: 'y-axis-1',
                         },
-                        tooltips: {
-                            enabled: true
-                        },
-                        scales: {
-                            xAxes: [{
-                                display: true
-                            }],
-                            yAxes: [{
-                                type: 'linear',
-                                display: true,
-                                position: 'left',
-                                id: 'y-axis-1',
-                            }, 
-                            ]
-                        },
-                    }
+                        ]
+                    },
+                }
             });
 
-           
+
             myData[2].value = game_stock[0].trend;
             myData[3].value = game_stock[0].daily_risk;
 
@@ -711,10 +711,10 @@ function selectButton(e){
     }
 
 
-    
+
 }
 function quickSort(arr) {
-    
+
     if (arr.length <= 1) {
         return arr;
     }
@@ -725,9 +725,9 @@ function quickSort(arr) {
     for (let i = 0; i < arr.length - 1; ++i) {
         const num = arr[i];
         if (num.trend < pivot.trend) {
-        less.push(num);
+            less.push(num);
         } else {
-        greater.push(num);
+            greater.push(num);
         }
     }
 
@@ -735,7 +735,7 @@ function quickSort(arr) {
 }
 
 function quickSort2(arr) {
-    
+
     if (arr.length <= 1) {
         return arr;
     }
@@ -746,9 +746,9 @@ function quickSort2(arr) {
     for (let i = 0; i < arr.length - 1; ++i) {
         const num = arr[i];
         if (num.daily_risk < pivot.daily_risk) {
-        less.push(num);
+            less.push(num);
         } else {
-        greater.push(num);
+            greater.push(num);
         }
     }
 
@@ -758,12 +758,12 @@ function quickSort2(arr) {
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
     var color = '#';
-    for (var i = 0; i < 6; i++ ) {
+    for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    if(color == "#FF0000" || color == "#FFD9EC" || color == "#000000"){
+    if (color == "#FF0000" || color == "#FFD9EC" || color == "#000000") {
         return getRandomColor();
-    }else{
+    } else {
         return color;
     }
 }
