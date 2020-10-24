@@ -212,6 +212,9 @@ li:hover .alphabet {
 .questions-page--incorrect {
   background: #FEA680;
 }
+.questions-page--choose{
+    background: orange;
+}
 
 .btn-holder {
   height: 6rem;
