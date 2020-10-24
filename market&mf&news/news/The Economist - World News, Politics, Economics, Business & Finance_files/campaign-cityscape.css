@@ -1,0 +1,334 @@
+.background-split-vertical {
+  background: linear-gradient(0deg, #162b48 50%, #23a5dd 50%);
+}
+.background-split-vertical-reverse {
+  background: linear-gradient(0deg, #23a5dd 50%, #162b48 50%);
+}
+.absolute-position, .city, .birds, .bird, .smoke, .car, .campaign-Cityscape .headline .slide-1, .campaign-Cityscape .headline .slide-2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.graphic-element, .city, .bird, .smoke, .car, .campaign-Cityscape .line-1 .svg-text, .campaign-Cityscape .line-3 .svg-text {
+  display: block;
+  color: transparent;
+  background-repeat: no-repeat;
+  font-size: 0;
+  background-size: 100% 100%;
+  object-fit: fill;
+}
+@keyframes wipe-right-to-nothing-animation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes birds-animation {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    transform: scaleX(1.2) scaleY(0.7);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes smoke-animation {
+  0% {
+    transform: rotateZ(-5deg) translateY(0);
+  }
+  50% {
+    transform: rotateZ(5deg) translateY(-3px);
+  }
+  100% {
+    transform: rotateZ(-5deg) translateY(0);
+  }
+}
+@keyframes smoke-below-animation {
+  0% {
+    transform: rotateZ(5deg) translateY(0);
+  }
+  50% {
+    transform: rotateZ(-5deg) translateY(3px);
+  }
+  100% {
+    transform: rotateZ(5deg) translateY(0);
+  }
+}
+@keyframes size-specific-animation {
+  
+}
+@keyframes city-timeline-logo-normal {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  58% {
+    width: 0;
+    height: 0%;
+  }
+  71% {
+    width: 0;
+    height: 100%;
+  }
+  74% {
+    width: 100%;
+  }
+  98% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 0%;
+  }
+}
+@keyframes city-timeline-logo-end-normal {
+  0% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes city-timeline-logo-1repetition {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  58% {
+    width: 0;
+    height: 0%;
+  }
+  71% {
+    width: 0;
+    height: 100%;
+  }
+  74% {
+    width: 100%;
+  }
+  98% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes city-timeline-logo-end-1repetition {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes city-timeline-text1 {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 1;
+  }
+  43% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes city-timeline-text2 {
+  
+  0% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  91% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes city-timeline-text {
+  0% {
+    top: auto;
+    bottom: 0;
+    height: 50%;
+  }
+  30% {
+    height: 50%;
+  }
+  31% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  32% {
+    
+    bottom: auto;
+    top: 0;
+    height: 100%;
+  }
+  34% {
+    
+    height: 50%;
+  }
+  59% {
+    
+    height: 50%;
+  }
+  89% {
+    height: 50%;
+  }
+  90% {
+    height: 0;
+    top: 0;
+    bottom: auto;
+  }
+  91% {
+    top: auto;
+    bottom: 0;
+    height: 0%;
+  }
+  96% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  97% {
+    top: auto;
+    bottom: 0;
+    height: 50%;
+  }
+  100% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+}
+
+.city {
+  background-image: url(CityAdParts_Dark_Blue_City.svg);
+  background-color: #23a5dd;
+}
+.city.city-below {
+  background-image: url(CityAdParts_Light_Blue_City.svg);
+  background-color: #162b48;
+}
+.bird {
+  background-image: url(Bird-Dark-individual.png);
+  animation: birds-animation 1s infinite linear;
+}
+.bird.bird-2 {
+  animation-delay: 0.1s;
+}
+.bird.bird-3 {
+  animation-delay: 0.2s;
+}
+.city-below .bird {
+  background-image: url(CityAdParts_Light_Blue_Birds-Individual.png);
+}
+.smoke {
+  background-image: url(CityAdParts_Dark_Blue_Smoke-Individual.png);
+  animation: smoke-animation 1s infinite linear;
+}
+.smoke.smoke-2 {
+  animation-delay: 0.1s;
+}
+.city-below .smoke {
+  background-image: url(CityAdParts_Light_Blue_Smoke-Individual.png);
+  animation-name: smoke-below-animation;
+}
+.car {
+  background-image: url(DarkBlueCar.png);
+  animation: size-specific-animation 7.5s 3 ease-in;
+}
+.city-below .car {
+  background-image: url(LightBlueCar.png);
+  animation-name: size-specific-animation;
+}
+.campaign-Cityscape .logo {
+  background-image: url(CMEGroupLogo_DarkBlue.png);
+}
+.campaign-Cityscape .cta {
+  background-image: url(LearnMoreButtons-DarkBlue.svg);
+}
+.campaign-Cityscape .logo-screen {
+  background: #23a5dd;
+}
+.campaign-Cityscape .logo-screen.logo-screen-during {
+  animation: city-timeline-logo-normal 7.5s 3 linear forwards;
+  z-index: 99;
+}
+.campaign-Cityscape .logo-screen.logo-screen-end {
+  animation: city-timeline-logo-end-normal 22.5s 1 linear forwards;
+  z-index: 100;
+}
+.campaign-Cityscape .line-1, .campaign-Cityscape .line-2 {
+  animation: city-timeline-text1 7.5s 3 linear forwards;
+}
+.campaign-Cityscape .line-3, .campaign-Cityscape .line-4 {
+  animation: city-timeline-text2 7.5s 3 linear forwards;
+}
+.campaign-Cityscape .line-1 .svg-text {
+  background-image: url(DoubleLineLeftEllipsis_CityAd-01.png);
+}
+.campaign-Cityscape .line-3 .svg-text {
+  background-image: url(WHEN_THE_WORLD_IS_UPSIDE_DOWN_CITY.svg);
+}
+.campaign-Cityscape .city {
+  animation: size-specific-animation 7.5s 3 linear forwards;
+}
+.campaign-Cityscape .headline {
+  animation: city-timeline-text 7.5s 3 linear forwards;
+  height: 100%;
+  width: 100%;
+  background: #162b48;
+  z-index: 30;
+  overflow: hidden;
+}
+.campaign-Cityscape .headline .slide-1 {
+  animation: size-specific-animation 7.5s 3 linear forwards;
+}
+.boat-2, .boat-3 {
+  display: none;
+}
